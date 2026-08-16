@@ -1,14 +1,522 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
     <title>Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
 </head>
+
 <body>
 
-    <h1>Pain au Crochet</h1>
-    <p>Handmade crochet creations.</p>
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <!-- Only appears on mobile -->
+            <a
+                href="#home"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+            <!-- Only appears on mobile -->
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <!-- Desktop navigation / mobile dropdown -->
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#shop">
+                    Shop
+                </a>
+
+                <a href="#custom">
+                    Custom Orders
+                </a>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="#"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================
+             HERO
+        ========================== -->
+
+        <section
+            class="hero"
+            id="home"
+        >
+
+            <div class="hero-brand">
+
+                <img
+                    src="images/logo.jpeg"
+                    alt="Pain au Crochet logo"
+                    class="hero-logo"
+                >
+
+                <p class="hero-description">
+                    Handmade crochet clothing, accessories and personalised
+                    pieces created with care.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a
+                        href="#shop"
+                        class="primary-button"
+                    >
+                        Shop the Collection
+                    </a>
+
+                    <a
+                        href="#custom"
+                        class="secondary-button"
+                    >
+                        Custom Order
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ABOUT SARA
+        ========================== -->
+
+        <section
+            class="about-section"
+            id="about"
+        >
+
+            <div class="about-container">
+
+                <div class="about-image">
+
+                    <img
+                        src="images/sara.jpeg"
+                        alt="Sara wearing one of her handmade crochet cardigans"
+                    >
+
+                </div>
+
+
+                <div class="about-content">
+
+                    <p class="eyebrow">
+                        Meet the maker
+                    </p>
+
+                    <h2>
+                        Hi, I'm Sara
+                    </h2>
+
+                    <p>
+                        I'm the creator behind Pain au Crochet. I make handmade
+                        crochet pieces with care, from baby items and accessories
+                        to clothing and completely custom designs.
+                    </p>
+
+                    <p>
+                        Whether you choose something from the collection or have
+                        an idea of your own, I love creating pieces that feel
+                        personal, thoughtful and unique.
+                    </p>
+
+                    <a
+                        href="#custom"
+                        class="primary-button"
+                    >
+                        Request a Custom Piece
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             SHOP
+        ========================== -->
+
+        <section
+            class="shop-section"
+            id="shop"
+        >
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    Explore
+                </p>
+
+                <h2>
+                    Shop the Collection
+                </h2>
+
+                <p>
+                    Browse handmade pieces currently available or explore
+                    the different Pain au Crochet collections.
+                </p>
+
+            </div>
+
+
+            <div class="collection-grid">
+
+                <article class="collection-card">
+
+                    <h3>
+                        Baby Collection
+                    </h3>
+
+                    <p>
+                        Handmade hats, sweaters, blankets and newborn
+                        announcement pieces.
+                    </p>
+
+                    <a href="#">
+                        View collection
+                    </a>
+
+                </article>
+
+
+                <article class="collection-card">
+
+                    <h3>
+                        Satin Bags
+                    </h3>
+
+                    <p>
+                        Handmade crochet bags with soft satin details.
+                    </p>
+
+                    <a href="#">
+                        View collection
+                    </a>
+
+                </article>
+
+
+                <article class="collection-card">
+
+                    <h3>
+                        Small & Cute
+                    </h3>
+
+                    <p>
+                        Keychains, hairbands, bag charms and small
+                        handmade accessories.
+                    </p>
+
+                    <a href="#">
+                        View collection
+                    </a>
+
+                </article>
+
+
+                <article class="collection-card">
+
+                    <h3>
+                        Summer Collection
+                    </h3>
+
+                    <p>
+                        Lightweight handmade clothing and accessories
+                        for warmer days.
+                    </p>
+
+                    <a href="#">
+                        View collection
+                    </a>
+
+                </article>
+
+
+                <article class="collection-card">
+
+                    <h3>
+                        Letter Chains
+                    </h3>
+
+                    <p>
+                        Personalised crochet letter chains made to order.
+                    </p>
+
+                    <a href="#">
+                        View collection
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CUSTOM ORDERS
+        ========================== -->
+
+        <section
+            class="custom-section"
+            id="custom"
+        >
+
+            <div class="custom-content">
+
+                <p class="eyebrow">
+                    Made for you
+                </p>
+
+                <h2>
+                    Have something completely custom in mind?
+                </h2>
+
+                <p>
+                    Choose your colours, style and idea and request a
+                    crochet piece made especially for you.
+                </p>
+
+                <a
+                    href="#"
+                    class="primary-button"
+                >
+                    Request a Custom Order
+                </a>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             PREVIOUS CUSTOMER WORK
+        ========================== -->
+
+        <section class="gallery-section">
+
+            <div class="section-heading">
+
+                <p class="eyebrow">
+                    Previously made
+                </p>
+
+                <h2>
+                    Made for our customers
+                </h2>
+
+                <p>
+                    A selection of handmade pieces created for
+                    previous customers.
+                </p>
+
+            </div>
+
+
+            <div class="gallery-placeholder">
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/hatblue.jpeg"
+                        alt="Blue handmade crochet hat"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/hatwinered.jpeg"
+                        alt="Wine red handmade crochet hat"
+                    >
+
+                </div>
+
+
+                <div class="gallery-item">
+
+                    <img
+                        src="images/babyhatorange.jpeg"
+                        alt="Orange handmade baby crochet hat"
+                    >
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             ACCOUNT
+        ========================== -->
+
+        <section class="account-section">
+
+            <h2>
+                Ready to place an order?
+            </h2>
+
+            <p>
+                Create an account to place an order, keep track of your
+                purchases or request a custom-made crochet piece.
+            </p>
+
+            <a
+                href="#"
+                class="primary-button"
+            >
+                Create Account
+            </a>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================
+         MOBILE MENU JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("nav-open");
+
+            const menuIsOpen =
+                navLinks.classList.contains("nav-open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+
+            if (menuIsOpen) {
+
+                menuToggle.textContent = "✕";
+
+            } else {
+
+                menuToggle.textContent = "☰";
+
+            }
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navLinks.classList.remove("nav-open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.textContent = "☰";
+
+                });
+
+            });
+
+    </script>
 
 </body>
+
 </html>

@@ -1,0 +1,1071 @@
+/* ==============================
+   RESET
+============================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html {
+    scroll-behavior: smooth;
+}
+
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+
+    background-color: #fafaf8;
+    color: #2f2f2f;
+
+    line-height: 1.6;
+}
+
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/*
+Stops sticky navigation from covering
+section headings when clicking links.
+*/
+
+#home,
+#shop,
+#custom,
+#about,
+#contact {
+    scroll-margin-top: 100px;
+}
+
+
+/* ==============================
+   HEADER
+============================== */
+
+.site-header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background-color: rgba(250, 250, 248, 0.97);
+
+    border-bottom:
+        1px solid #e8e8e4;
+}
+
+
+.navbar {
+    max-width: 1200px;
+    min-height: 85px;
+
+    margin: 0 auto;
+    padding: 15px 30px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+
+
+/* Hidden on desktop */
+
+.mobile-brand {
+    display: none;
+}
+
+
+.menu-toggle {
+    display: none;
+
+    background: none;
+    border: none;
+
+    font-size: 28px;
+
+    color: #2f2f2f;
+
+    cursor: pointer;
+}
+
+
+/* ==============================
+   DESKTOP NAVIGATION
+============================== */
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 34px;
+}
+
+
+.nav-links a {
+    font-size: 15px;
+    font-weight: 600;
+
+    transition:
+        color 0.2s ease;
+}
+
+
+.nav-links a:hover {
+    color: #6eb6ed;
+}
+
+
+.sign-in {
+    padding: 9px 20px;
+
+    border:
+        1.5px solid #79bdf2;
+
+    border-radius: 30px;
+}
+
+
+/* ==============================
+   HERO
+============================== */
+
+.hero {
+    padding:
+        65px 30px 75px;
+
+    background-color: #fafaf8;
+
+    text-align: center;
+}
+
+
+.hero-brand {
+    max-width: 850px;
+
+    margin: 0 auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.hero-logo {
+    width:
+        min(720px, 90vw);
+
+    height: 220px;
+
+    object-fit: cover;
+
+    /*
+    Keeps more of the upper part
+    of the logo visible.
+    */
+
+    object-position:
+        center 40%;
+
+    margin-bottom: 12px;
+}
+
+
+.hero-description {
+    max-width: 620px;
+
+    margin-bottom: 30px;
+
+    font-size: 19px;
+
+    color: #626262;
+}
+
+
+.hero-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+
+    gap: 14px;
+}
+
+
+/* ==============================
+   BUTTONS
+============================== */
+
+.primary-button,
+.secondary-button {
+    display: inline-block;
+
+    padding:
+        13px 25px;
+
+    border-radius: 30px;
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition:
+        background-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.primary-button {
+    background-color:
+        #79bdf2;
+
+    color: white;
+}
+
+
+.primary-button:hover {
+    background-color:
+        #62ace5;
+
+    transform:
+        translateY(-2px);
+}
+
+
+.secondary-button {
+    color:
+        #499ee0;
+
+    border:
+        1.5px solid #79bdf2;
+
+    background-color:
+        transparent;
+}
+
+
+.secondary-button:hover {
+    background-color:
+        #edf7fe;
+}
+
+
+/* ==============================
+   ABOUT SARA
+============================== */
+
+.about-section {
+    background-color:
+        #edf7fe;
+
+    padding:
+        90px 30px;
+}
+
+
+.about-container {
+    max-width: 1050px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns:
+        380px 1fr;
+
+    align-items: center;
+
+    gap: 70px;
+}
+
+
+.about-image {
+    width: 100%;
+}
+
+
+.about-image img {
+    width: 100%;
+
+    height: 470px;
+
+    object-fit: cover;
+
+    object-position:
+        center;
+
+    border-radius:
+        24px;
+}
+
+
+.about-content {
+    max-width:
+        540px;
+}
+
+
+.about-content h2 {
+    font-size:
+        44px;
+
+    line-height:
+        1.15;
+
+    margin-bottom:
+        20px;
+}
+
+
+.about-content p:not(.eyebrow) {
+    margin-bottom:
+        18px;
+
+    font-size:
+        17px;
+
+    color:
+        #555555;
+}
+
+
+.about-content .primary-button {
+    margin-top:
+        10px;
+}
+
+
+/* ==============================
+   SMALL SECTION LABEL
+============================== */
+
+.eyebrow {
+    margin-bottom:
+        10px;
+
+    color:
+        #62ace5;
+
+    font-size:
+        13px;
+
+    font-weight:
+        700;
+
+    text-transform:
+        uppercase;
+
+    letter-spacing:
+        2.2px;
+}
+
+
+/* ==============================
+   SECTION HEADINGS
+============================== */
+
+.section-heading {
+    max-width:
+        700px;
+
+    margin:
+        0 auto 45px;
+
+    text-align:
+        center;
+}
+
+
+.section-heading h2 {
+    margin-bottom:
+        14px;
+
+    font-size:
+        40px;
+
+    line-height:
+        1.2;
+}
+
+
+.section-heading p:not(.eyebrow) {
+    color:
+        #696969;
+
+    font-size:
+        17px;
+}
+
+
+/* ==============================
+   SHOP
+============================== */
+
+.shop-section {
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+    padding:
+        95px 30px;
+}
+
+
+.collection-grid {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        24px;
+}
+
+
+.collection-card {
+    min-height:
+        230px;
+
+    padding:
+        30px;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    background-color:
+        white;
+
+    border:
+        1px solid #e7e7e2;
+
+    border-radius:
+        18px;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+
+.collection-card:hover {
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(0, 0, 0, 0.07);
+}
+
+
+.collection-card h3 {
+    margin-bottom:
+        12px;
+
+    font-size:
+        22px;
+}
+
+
+.collection-card p {
+    margin-bottom:
+        25px;
+
+    color:
+        #686868;
+}
+
+
+.collection-card a {
+    margin-top:
+        auto;
+
+    color:
+        #59a6df;
+
+    font-weight:
+        700;
+}
+
+
+/* ==============================
+   CUSTOM ORDERS
+============================== */
+
+.custom-section {
+    padding:
+        90px 30px;
+
+    text-align:
+        center;
+
+    color:
+        white;
+
+    background-color:
+        #79bdf2;
+}
+
+
+.custom-content {
+    max-width:
+        700px;
+
+    margin:
+        0 auto;
+}
+
+
+.custom-section .eyebrow {
+    color:
+        white;
+
+    opacity:
+        0.85;
+}
+
+
+.custom-section h2 {
+    margin-bottom:
+        18px;
+
+    font-size:
+        42px;
+
+    line-height:
+        1.2;
+}
+
+
+.custom-section p:not(.eyebrow) {
+    margin-bottom:
+        30px;
+
+    font-size:
+        18px;
+}
+
+
+.custom-section .primary-button {
+    background-color:
+        white;
+
+    color:
+        #499ee0;
+}
+
+
+/* ==============================
+   PREVIOUS CUSTOMER WORK
+============================== */
+
+.gallery-section {
+    max-width:
+        1200px;
+
+    margin:
+        0 auto;
+
+    padding:
+        95px 30px;
+}
+
+
+.gallery-placeholder {
+    display:
+        grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap:
+        24px;
+}
+
+
+.gallery-item {
+    overflow:
+        hidden;
+
+    background-color:
+        #eeeeee;
+
+    border-radius:
+        20px;
+
+    aspect-ratio:
+        1 / 1;
+}
+
+
+.gallery-item img {
+    width:
+        100%;
+
+    height:
+        100%;
+
+    object-fit:
+        cover;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.gallery-item:hover img {
+    transform:
+        scale(1.04);
+}
+
+
+/* ==============================
+   ACCOUNT CTA
+============================== */
+
+.account-section {
+    padding:
+        85px 30px;
+
+    text-align:
+        center;
+
+    background-color:
+        #f0eee9;
+}
+
+
+.account-section h2 {
+    margin-bottom:
+        14px;
+
+    font-size:
+        38px;
+}
+
+
+.account-section p {
+    max-width:
+        650px;
+
+    margin:
+        0 auto 28px;
+
+    color:
+        #626262;
+
+    font-size:
+        17px;
+}
+
+
+/* ==============================
+   FOOTER
+============================== */
+
+footer {
+    padding:
+        35px 30px;
+
+    display:
+        flex;
+
+    justify-content:
+        center;
+
+    align-items:
+        center;
+
+    gap:
+        40px;
+
+    background-color:
+        #292929;
+
+    color:
+        white;
+}
+
+
+.footer-links {
+    display:
+        flex;
+
+    gap:
+        20px;
+}
+
+
+.footer-links a:hover {
+    color:
+        #79bdf2;
+}
+
+
+/* ==============================
+   TABLET
+============================== */
+
+@media (max-width: 900px) {
+
+    .hero-logo {
+        width:
+            min(650px, 92vw);
+
+        height:
+            200px;
+
+        object-position:
+            center 40%;
+    }
+
+
+    .about-container {
+        grid-template-columns:
+            320px 1fr;
+
+        gap:
+            40px;
+    }
+
+
+    .about-image img {
+        height:
+            420px;
+    }
+
+
+    .collection-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+/* ==============================
+   MOBILE
+============================== */
+
+@media (max-width: 700px) {
+
+    #home,
+    #shop,
+    #custom,
+    #about,
+    #contact {
+        scroll-margin-top:
+            75px;
+    }
+
+
+    /* --------------------------
+       MOBILE NAVIGATION
+    -------------------------- */
+
+    .navbar {
+        min-height:
+            70px;
+
+        padding:
+            14px 22px;
+
+        display:
+            flex;
+
+        justify-content:
+            space-between;
+
+        align-items:
+            center;
+    }
+
+
+    .mobile-brand {
+        display:
+            block;
+
+        color:
+            #62ace5;
+
+        font-size:
+            19px;
+
+        font-weight:
+            700;
+    }
+
+
+    .menu-toggle {
+        display:
+            block;
+
+        width:
+            42px;
+
+        height:
+            42px;
+
+        font-size:
+            27px;
+
+        line-height:
+            1;
+
+        border-radius:
+            8px;
+    }
+
+
+    .nav-links {
+        display:
+            none;
+
+        position:
+            absolute;
+
+        top:
+            70px;
+
+        left:
+            0;
+
+        width:
+            100%;
+
+        padding:
+            26px;
+
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        gap:
+            20px;
+
+        background-color:
+            #fafaf8;
+
+        border-bottom:
+            1px solid #e8e8e4;
+
+        box-shadow:
+            0 12px 25px
+            rgba(0, 0, 0, 0.08);
+    }
+
+
+    .nav-links.nav-open {
+        display:
+            flex;
+    }
+
+
+    .nav-links a {
+        font-size:
+            17px;
+    }
+
+
+    .sign-in {
+        padding:
+            10px 30px;
+    }
+
+
+    /* --------------------------
+       HERO
+    -------------------------- */
+
+    .hero {
+        padding:
+            40px 20px 55px;
+    }
+
+
+    .hero-logo {
+        width:
+            100%;
+
+        height:
+            165px;
+
+        object-fit:
+            cover;
+
+        object-position:
+            center 40%;
+    }
+
+
+    .hero-description {
+        max-width:
+            340px;
+
+        font-size:
+            17px;
+    }
+
+
+    .hero-buttons {
+        flex-direction:
+            column;
+
+        align-items:
+            center;
+
+        gap:
+            14px;
+    }
+
+
+    /* --------------------------
+       ABOUT SARA
+    -------------------------- */
+
+    .about-section {
+        padding:
+            60px 20px;
+    }
+
+
+    .about-container {
+        grid-template-columns:
+            1fr;
+
+        gap:
+            35px;
+    }
+
+
+    .about-image {
+        max-width:
+            360px;
+
+        margin:
+            0 auto;
+    }
+
+
+    .about-image img {
+        height:
+            430px;
+
+        border-radius:
+            20px;
+    }
+
+
+    .about-content {
+        margin:
+            0 auto;
+
+        text-align:
+            center;
+    }
+
+
+    .about-content h2 {
+        font-size:
+            36px;
+    }
+
+
+    /* --------------------------
+       SHOP
+    -------------------------- */
+
+    .shop-section {
+        padding:
+            70px 22px;
+    }
+
+
+    .collection-grid {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* --------------------------
+       CUSTOM ORDERS
+    -------------------------- */
+
+    .custom-section {
+        padding:
+            75px 25px;
+    }
+
+
+    .custom-section h2 {
+        font-size:
+            34px;
+    }
+
+
+    /* --------------------------
+       GALLERY
+    -------------------------- */
+
+    .gallery-section {
+        padding:
+            70px 22px;
+    }
+
+
+    .gallery-placeholder {
+        grid-template-columns:
+            1fr;
+    }
+
+
+    /* --------------------------
+       ACCOUNT
+    -------------------------- */
+
+    .account-section {
+        padding:
+            70px 25px;
+    }
+
+
+    .account-section h2 {
+        font-size:
+            34px;
+    }
+
+
+    /* --------------------------
+       FOOTER
+    -------------------------- */
+
+    footer {
+        flex-direction:
+            column;
+
+        gap:
+            12px;
+
+        text-align:
+            center;
+    }
+
+}
