@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Crochet Hat | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+                </a>
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- PRODUCT -->
+
+        <section class="product-page">
+
+            <div class="product-page-container">
+
+
+                <!-- PRODUCT IMAGE -->
+
+                <div class="product-page-image">
+
+                    <img
+                        id="hat-image"
+                        src="images/hatblue.jpeg"
+                        alt="Blue handmade crochet hat"
+                    >
+
+                </div>
+
+
+                <!-- PRODUCT INFORMATION -->
+
+                <div class="product-page-details">
+
+                    <a
+                        href="index.html#shop"
+                        class="back-link"
+                    >
+                        ← Back to Shop
+                    </a>
+
+
+                    <p class="product-category">
+                        Hats
+                    </p>
+
+
+                    <h1>
+                        Crochet Hat
+                    </h1>
+
+
+                    <p class="product-made-by">
+                        Handmade by Pain au Crochet
+                    </p>
+
+
+                    <div class="product-availability">
+
+                        <span class="product-status">
+                            Available
+                        </span>
+
+                    </div>
+
+
+                    <p class="product-page-description">
+                        A soft handmade crochet hat created with care.
+                        Choose from the colours currently available below.
+                        Every piece is handmade, so small differences make
+                        each hat unique.
+                    </p>
+
+
+                    <!-- COLOUR SELECTOR -->
+
+                    <div class="product-option">
+
+                        <h3>
+                            Colour
+                        </h3>
+
+                        <p class="selected-colour">
+                            Selected:
+                            <strong id="selected-colour">
+                                Blue
+                            </strong>
+                        </p>
+
+
+                        <div class="colour-options">
+
+                            <button
+                                class="colour-button active"
+                                type="button"
+                                data-colour="Blue"
+                                data-image="images/hatblue.jpeg"
+                                data-alt="Blue handmade crochet hat"
+                            >
+                                <span class="colour-swatch blue-swatch"></span>
+
+                                Blue
+                            </button>
+
+
+                            <button
+                                class="colour-button"
+                                type="button"
+                                data-colour="Wine Red"
+                                data-image="images/hatwinered.jpeg"
+                                data-alt="Wine red handmade crochet hat"
+                            >
+                                <span class="colour-swatch red-swatch"></span>
+
+                                Wine Red
+                            </button>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- PRODUCT DETAILS -->
+
+                    <div class="product-details-list">
+
+                        <div>
+                            <strong>
+                                Product
+                            </strong>
+
+                            <span>
+                                Crochet Hat
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <strong>
+                                Made
+                            </strong>
+
+                            <span>
+                                Handmade
+                            </span>
+                        </div>
+
+
+                        <div>
+                            <strong>
+                                Availability
+                            </strong>
+
+                            <span>
+                                In Stock
+                            </span>
+                        </div>
+
+                    </div>
+
+
+                    <!-- ORDER AREA -->
+
+                    <div class="product-order-area">
+
+                        <p class="price-placeholder">
+                            Price coming soon
+                        </p>
+
+
+                        <button
+                            class="add-to-basket-button"
+                            id="add-to-basket"
+                            type="button"
+                        >
+                            Add to Basket
+                        </button>
+
+                    </div>
+
+
+                    <p class="product-note">
+                        You will need an account to complete an order.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("nav-open");
+
+                const menuIsOpen =
+                    navLinks.classList.contains("nav-open");
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove("nav-open");
+
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
+
+                        menuToggle.textContent = "☰";
+
+                    }
+                );
+
+            });
+
+
+        /* =========================
+           COLOUR SELECTOR
+        ========================== */
+
+        const colourButtons =
+            document.querySelectorAll(".colour-button");
+
+        const hatImage =
+            document.getElementById("hat-image");
+
+        const selectedColour =
+            document.getElementById("selected-colour");
+
+
+        colourButtons.forEach(function (button) {
+
+            button.addEventListener(
+                "click",
+                function () {
+
+                    colourButtons.forEach(
+                        function (otherButton) {
+
+                            otherButton.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    button.classList.add("active");
+
+
+                    hatImage.src =
+                        button.dataset.image;
+
+                    hatImage.alt =
+                        button.dataset.alt;
+
+                    selectedColour.textContent =
+                        button.dataset.colour;
+
+                }
+            );
+
+        });
+
+
+        /* =========================
+           BASKET
+        ========================== */
+
+        const addToBasketButton =
+            document.getElementById("add-to-basket");
+
+        const basketCount =
+            document.getElementById("basket-count");
+
+
+        function getBasket() {
+
+            return JSON.parse(
+                localStorage.getItem(
+                    "painAuCrochetBasket"
+                )
+            ) || [];
+
+        }
+
+
+        function saveBasket(basket) {
+
+            localStorage.setItem(
+                "painAuCrochetBasket",
+                JSON.stringify(basket)
+            );
+
+        }
+
+
+        function updateBasketCount() {
+
+            const basket =
+                getBasket();
+
+
+            const totalItems =
+                basket.reduce(
+                    function (total, item) {
+
+                        return total +
+                            (item.quantity || 1);
+
+                    },
+                    0
+                );
+
+
+            basketCount.textContent =
+                totalItems;
+
+        }
+
+
+        addToBasketButton.addEventListener(
+            "click",
+            function () {
+
+                const basket =
+                    getBasket();
+
+
+                const colour =
+                    selectedColour.textContent.trim();
+
+
+                /*
+                    Check whether the exact same
+                    hat colour is already in the basket.
+                */
+
+                const existingItem =
+                    basket.find(
+                        function (item) {
+
+                            return (
+                                item.name === "Crochet Hat" &&
+                                item.colour === colour
+                            );
+
+                        }
+                    );
+
+
+                if (existingItem) {
+
+                    existingItem.quantity =
+                        (existingItem.quantity || 1) + 1;
+
+                } else {
+
+                    basket.push({
+
+                        name: "Crochet Hat",
+
+                        category: "Hats",
+
+                        colour: colour,
+
+                        image: hatImage.getAttribute("src"),
+
+                        quantity: 1
+
+                    });
+
+                }
+
+
+                saveBasket(basket);
+
+                updateBasketCount();
+
+
+                /*
+                    Give the customer visual feedback.
+                */
+
+                addToBasketButton.textContent =
+                    "Added to Basket ✓";
+
+
+                setTimeout(
+                    function () {
+
+                        addToBasketButton.textContent =
+                            "Add to Basket";
+
+                    },
+                    1500
+                );
+
+            }
+        );
+
+
+        /* Show current basket number */
+
+        updateBasketCount();
+
+    </script>
+
+</body>
+
+</html>

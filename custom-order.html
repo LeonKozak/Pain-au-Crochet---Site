@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Custom Order | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- CUSTOM ORDER INTRO -->
+
+        <section class="custom-order-page">
+
+            <div class="custom-order-container">
+
+                <div class="custom-order-intro">
+
+                    <a
+                        href="index.html"
+                        class="back-link"
+                    >
+                        ← Back to Home
+                    </a>
+
+                    <p class="eyebrow">
+                        Made for you
+                    </p>
+
+                    <h1>
+                        Request a Custom Piece
+                    </h1>
+
+                    <p>
+                        Have something special in mind? Tell Sara what
+                        you would like and she can create a handmade
+                        crochet piece just for you.
+                    </p>
+
+                </div>
+
+
+                <!-- CUSTOM ORDER FORM -->
+
+                <form
+                    class="custom-order-form"
+                    id="custom-order-form"
+                >
+
+                    <!-- PRODUCT TYPE -->
+
+                    <div class="form-group">
+
+                        <label for="item-type">
+                            What would you like?
+                        </label>
+
+                        <select
+                            id="item-type"
+                            name="item-type"
+                            required
+                        >
+                            <option value="">
+                                Select an item
+                            </option>
+
+                            <option value="baby">
+                                Baby Collection
+                            </option>
+
+                            <option value="satin-bag">
+                                Satin Bag
+                            </option>
+
+                            <option value="small-cute">
+                                Small & Cute
+                            </option>
+
+                            <option value="letter-chain">
+                                Letter Chain
+                            </option>
+
+                            <option value="summer">
+                                Summer Collection Clothing
+                            </option>
+
+                            <option value="other">
+                                Something Else
+                            </option>
+                        </select>
+
+                    </div>
+
+
+                    <!-- COLOUR -->
+
+                    <div class="form-group">
+
+                        <label for="colour">
+                            Preferred colour(s)
+                        </label>
+
+                        <input
+                            type="text"
+                            id="colour"
+                            name="colour"
+                            placeholder="For example: baby blue, cream, pink..."
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- SIZE -->
+
+                    <div class="form-group">
+
+                        <label for="size">
+                            Size or measurements
+                        </label>
+
+                        <input
+                            type="text"
+                            id="size"
+                            name="size"
+                            placeholder="For example: Medium, newborn, 60 cm..."
+                        >
+
+                        <p class="form-help">
+                            You can leave this blank if you are unsure.
+                        </p>
+
+                    </div>
+
+
+                    <!-- DESCRIPTION -->
+
+                    <div class="form-group">
+
+                        <label for="description">
+                            Tell us about your idea
+                        </label>
+
+                        <textarea
+                            id="description"
+                            name="description"
+                            rows="7"
+                            placeholder="Describe the style, colours, details and anything else you have in mind..."
+                            required
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- REFERENCE IMAGE -->
+
+                    <div class="form-group">
+
+                        <label for="reference-image">
+                            Reference image
+                        </label>
+
+                        <div class="file-upload">
+
+                            <input
+                                type="file"
+                                id="reference-image"
+                                name="reference-image"
+                                accept="image/*"
+                            >
+
+                        </div>
+
+                        <p class="form-help">
+                            Optional — upload an inspiration image or
+                            example of what you have in mind.
+                        </p>
+
+                    </div>
+
+
+                    <!-- DEADLINE -->
+
+                    <div class="form-group">
+
+                        <label for="deadline">
+                            When would you like it by?
+                        </label>
+
+                        <input
+                            type="date"
+                            id="deadline"
+                            name="deadline"
+                        >
+
+                        <p class="form-help">
+                            Handmade pieces take time, so requested dates
+                            cannot always be guaranteed.
+                        </p>
+
+                    </div>
+
+
+                    <!-- BUDGET -->
+
+                    <div class="form-group">
+
+                        <label for="budget">
+                            Approximate budget
+                        </label>
+
+                        <select
+                            id="budget"
+                            name="budget"
+                        >
+
+                            <option value="">
+                                Prefer not to say
+                            </option>
+
+                            <option value="under-25">
+                                Under €25
+                            </option>
+
+                            <option value="25-50">
+                                €25 – €50
+                            </option>
+
+                            <option value="50-100">
+                                €50 – €100
+                            </option>
+
+                            <option value="100-plus">
+                                €100+
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- SUBMIT -->
+
+                    <div class="custom-form-submit">
+
+                        <button
+                            type="submit"
+                            class="custom-submit-button"
+                        >
+                            Submit Custom Request
+                        </button>
+
+                        <p>
+                            Sara will review your request before any
+                            order or payment is confirmed.
+                        </p>
+
+                    </div>
+
+
+                    <!-- TEMPORARY MESSAGE -->
+
+                    <div
+                        class="custom-form-message"
+                        id="custom-form-message"
+                    >
+                    </div>
+
+                </form>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script>
+
+        /* MOBILE MENU */
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        menuToggle.addEventListener("click", function () {
+
+            navLinks.classList.toggle("nav-open");
+
+            const menuIsOpen =
+                navLinks.classList.contains("nav-open");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                menuIsOpen
+            );
+
+            menuToggle.textContent =
+                menuIsOpen ? "✕" : "☰";
+
+        });
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(function (link) {
+
+                link.addEventListener("click", function () {
+
+                    navLinks.classList.remove("nav-open");
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.textContent = "☰";
+
+                });
+
+            });
+
+
+        /* CUSTOM ORDER FORM */
+
+        const customOrderForm =
+            document.getElementById("custom-order-form");
+
+        const formMessage =
+            document.getElementById("custom-form-message");
+
+
+        customOrderForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+                formMessage.textContent =
+                    "Your request looks ready! Online submission will be connected when customer accounts are added.";
+
+                formMessage.classList.add("show");
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>

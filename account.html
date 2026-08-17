@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Account | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+</head>
+
+
+<body>
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <!-- BASKET -->
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <!-- ACCOUNT -->
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="account-page">
+
+            <div class="account-page-container">
+
+
+                <!-- INTRO -->
+
+                <div class="account-page-intro">
+
+                    <a
+                        href="index.html"
+                        class="back-link"
+                    >
+                        ← Back to Home
+                    </a>
+
+
+                    <p class="eyebrow">
+                        Your account
+                    </p>
+
+
+                    <h1>
+                        Welcome to Pain au Crochet
+                    </h1>
+
+
+                    <p>
+                        Sign in to manage your orders or create an
+                        account to start shopping.
+                    </p>
+
+                </div>
+
+
+
+                <!-- ACCOUNT CARD -->
+
+                <div class="account-card">
+
+
+                    <!-- TAB BUTTONS -->
+
+                    <div class="account-tabs">
+
+                        <button
+                            type="button"
+                            class="account-tab active"
+                            id="sign-in-tab"
+                        >
+                            Sign In
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="account-tab"
+                            id="create-account-tab"
+                        >
+                            Create Account
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         SIGN IN FORM
+                    ========================== -->
+
+                    <div
+                        class="account-form-section active"
+                        id="sign-in-section"
+                    >
+
+                        <div class="account-form-heading">
+
+                            <h2>
+                                Sign In
+                            </h2>
+
+                            <p>
+                                Welcome back! Sign in to access
+                                your Pain au Crochet account.
+                            </p>
+
+                        </div>
+
+
+                        <form id="sign-in-form">
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="sign-in-email">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="sign-in-email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="sign-in-password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="sign-in-password"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- FORGOT PASSWORD -->
+
+                            <div class="forgot-password">
+
+                                <a href="#">
+                                    Forgot your password?
+                                </a>
+
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                                type="submit"
+                                class="account-submit-button"
+                            >
+                                Sign In
+                            </button>
+
+
+                            <p class="account-switch-text">
+                                Don't have an account?
+
+                                <button
+                                    type="button"
+                                    id="switch-to-create"
+                                >
+                                    Create one
+                                </button>
+                            </p>
+
+
+                            <div
+                                class="account-message"
+                                id="sign-in-message"
+                            >
+                            </div>
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         CREATE ACCOUNT FORM
+                    ========================== -->
+
+                    <div
+                        class="account-form-section"
+                        id="create-account-section"
+                    >
+
+                        <div class="account-form-heading">
+
+                            <h2>
+                                Create Account
+                            </h2>
+
+                            <p>
+                                Create an account to place orders,
+                                request custom pieces and keep track
+                                of your purchases.
+                            </p>
+
+                        </div>
+
+
+                        <form id="create-account-form">
+
+
+                            <!-- NAME -->
+
+                            <div class="form-group">
+
+                                <label for="create-name">
+                                    Name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="create-name"
+                                    name="name"
+                                    placeholder="Your name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="create-email">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="create-email"
+                                    name="email"
+                                    placeholder="you@example.com"
+                                    autocomplete="email"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="create-password">
+                                    Password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="create-password"
+                                    name="password"
+                                    placeholder="Create a password"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <p class="form-help">
+                                    Use at least 8 characters.
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- CONFIRM PASSWORD -->
+
+                            <div class="form-group">
+
+                                <label for="confirm-password">
+                                    Confirm password
+                                </label>
+
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    name="confirm-password"
+                                    placeholder="Enter your password again"
+                                    minlength="8"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                                type="submit"
+                                class="account-submit-button"
+                            >
+                                Create Account
+                            </button>
+
+
+                            <p class="account-switch-text">
+                                Already have an account?
+
+                                <button
+                                    type="button"
+                                    id="switch-to-sign-in"
+                                >
+                                    Sign in
+                                </button>
+                            </p>
+
+
+                            <div
+                                class="account-message"
+                                id="create-account-message"
+                            >
+                            </div>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById("menu-toggle");
+
+        const navLinks =
+            document.getElementById("nav-links");
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle("nav-open");
+
+
+                const menuIsOpen =
+                    navLinks.classList.contains("nav-open");
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove("nav-open");
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            menuToggle.textContent = "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           BASKET COUNT
+        ========================== */
+
+        const basketCount =
+            document.getElementById("basket-count");
+
+
+        function updateBasketCount() {
+
+            const basket =
+                JSON.parse(
+                    localStorage.getItem(
+                        "painAuCrochetBasket"
+                    )
+                ) || [];
+
+
+            const totalItems =
+                basket.reduce(
+                    function (total, item) {
+
+                        return total +
+                            (item.quantity || 1);
+
+                    },
+                    0
+                );
+
+
+            basketCount.textContent =
+                totalItems;
+
+        }
+
+
+        updateBasketCount();
+
+
+
+        /* =========================
+           ACCOUNT TABS
+        ========================== */
+
+        const signInTab =
+            document.getElementById("sign-in-tab");
+
+        const createAccountTab =
+            document.getElementById(
+                "create-account-tab"
+            );
+
+        const signInSection =
+            document.getElementById(
+                "sign-in-section"
+            );
+
+        const createAccountSection =
+            document.getElementById(
+                "create-account-section"
+            );
+
+        const switchToCreate =
+            document.getElementById(
+                "switch-to-create"
+            );
+
+        const switchToSignIn =
+            document.getElementById(
+                "switch-to-sign-in"
+            );
+
+
+
+        function showSignIn() {
+
+            signInTab.classList.add("active");
+
+            createAccountTab.classList.remove(
+                "active"
+            );
+
+            signInSection.classList.add("active");
+
+            createAccountSection.classList.remove(
+                "active"
+            );
+
+        }
+
+
+
+        function showCreateAccount() {
+
+            createAccountTab.classList.add(
+                "active"
+            );
+
+            signInTab.classList.remove("active");
+
+            createAccountSection.classList.add(
+                "active"
+            );
+
+            signInSection.classList.remove(
+                "active"
+            );
+
+        }
+
+
+
+        signInTab.addEventListener(
+            "click",
+            showSignIn
+        );
+
+
+        createAccountTab.addEventListener(
+            "click",
+            showCreateAccount
+        );
+
+
+        switchToCreate.addEventListener(
+            "click",
+            showCreateAccount
+        );
+
+
+        switchToSignIn.addEventListener(
+            "click",
+            showSignIn
+        );
+
+
+
+        /* =========================
+           SIGN IN FORM
+        ========================== */
+
+        const signInForm =
+            document.getElementById(
+                "sign-in-form"
+            );
+
+        const signInMessage =
+            document.getElementById(
+                "sign-in-message"
+            );
+
+
+        signInForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                signInMessage.textContent =
+                    "Sign in will be activated when the secure account system is connected.";
+
+
+                signInMessage.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+
+        /* =========================
+           CREATE ACCOUNT FORM
+        ========================== */
+
+        const createAccountForm =
+            document.getElementById(
+                "create-account-form"
+            );
+
+        const createAccountMessage =
+            document.getElementById(
+                "create-account-message"
+            );
+
+
+        createAccountForm.addEventListener(
+            "submit",
+            function (event) {
+
+                event.preventDefault();
+
+
+                const password =
+                    document.getElementById(
+                        "create-password"
+                    ).value;
+
+
+                const confirmPassword =
+                    document.getElementById(
+                        "confirm-password"
+                    ).value;
+
+
+
+                if (password !== confirmPassword) {
+
+                    createAccountMessage.textContent =
+                        "The passwords do not match.";
+
+                    createAccountMessage.classList.add(
+                        "show"
+                    );
+
+                    createAccountMessage.classList.add(
+                        "error"
+                    );
+
+                    return;
+
+                }
+
+
+                createAccountMessage.classList.remove(
+                    "error"
+                );
+
+
+                createAccountMessage.textContent =
+                    "Your details look good. Account creation will be activated when the secure account system is connected.";
+
+
+                createAccountMessage.classList.add(
+                    "show"
+                );
+
+            }
+        );
+
+
+    </script>
+
+
+</body>
+
+</html>
