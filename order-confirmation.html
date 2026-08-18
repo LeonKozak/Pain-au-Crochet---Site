@@ -1,0 +1,972 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Order Confirmation | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="confirmation-page">
+
+            <div class="confirmation-container">
+
+
+                <!-- =========================
+                     LOADING
+                ========================== -->
+
+                <div
+                    class="confirmation-loading"
+                    id="confirmation-loading"
+                >
+
+                    <p>
+                        Loading your order...
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================
+                     ERROR
+                ========================== -->
+
+                <div
+                    class="confirmation-error"
+                    id="confirmation-error"
+                >
+
+                    <h1>
+                        We couldn't load this order
+                    </h1>
+
+                    <p id="confirmation-error-message">
+                        Please return to your account or try again.
+                    </p>
+
+                    <a
+                        href="index.html"
+                        class="primary-button"
+                    >
+                        Return Home
+                    </a>
+
+                </div>
+
+
+
+                <!-- =========================
+                     SUCCESS CONTENT
+                ========================== -->
+
+                <div
+                    class="confirmation-content"
+                    id="confirmation-content"
+                >
+
+
+                    <!-- SUCCESS HEADER -->
+
+                    <div class="confirmation-hero">
+
+                        <div class="confirmation-check">
+                            ✓
+                        </div>
+
+
+                        <p class="eyebrow">
+                            Order received
+                        </p>
+
+
+                        <h1>
+                            Thank you for your order!
+                        </h1>
+
+
+                        <p>
+                            Your order has been saved successfully.
+                            Sara can now review the details of your
+                            handmade pieces.
+                        </p>
+
+
+                        <div class="confirmation-reference">
+
+                            <span>
+                                Order reference
+                            </span>
+
+                            <strong id="order-reference">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ORDER LAYOUT
+                    ========================== -->
+
+                    <div class="confirmation-layout">
+
+
+                        <!-- ORDER INFORMATION -->
+
+                        <div class="confirmation-card">
+
+                            <h2>
+                                Order Details
+                            </h2>
+
+
+                            <div class="confirmation-detail-row">
+
+                                <span>
+                                    Order date
+                                </span>
+
+                                <strong id="order-date">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                            <div class="confirmation-detail-row">
+
+                                <span>
+                                    Status
+                                </span>
+
+                                <strong
+                                    class="confirmation-status"
+                                    id="order-status"
+                                >
+                                    Pending
+                                </strong>
+
+                            </div>
+
+
+                            <div class="confirmation-detail-row">
+
+                                <span>
+                                    Email
+                                </span>
+
+                                <strong id="order-email">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DELIVERY INFORMATION -->
+
+                        <div class="confirmation-card">
+
+                            <h2>
+                                Delivery Details
+                            </h2>
+
+
+                            <p
+                                class="confirmation-customer-name"
+                                id="delivery-name"
+                            >
+                            </p>
+
+
+                            <p id="delivery-address">
+                            </p>
+
+
+                            <p id="delivery-city">
+                            </p>
+
+
+                            <p id="delivery-country">
+                            </p>
+
+
+                            <p
+                                class="confirmation-phone"
+                                id="delivery-phone"
+                            >
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ITEMS
+                    ========================== -->
+
+                    <div class="confirmation-items-card">
+
+                        <h2>
+                            Your Items
+                        </h2>
+
+
+                        <div
+                            class="confirmation-items"
+                            id="confirmation-items"
+                        >
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         WHAT HAPPENS NEXT
+                    ========================== -->
+
+                    <div class="confirmation-next">
+
+                        <p class="eyebrow">
+                            What happens next?
+                        </p>
+
+
+                        <h2>
+                            Sara will review your order
+                        </h2>
+
+
+                        <p>
+                            Your order is currently marked as pending.
+                            Pricing, delivery and payment details will
+                            be confirmed before the store goes live.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ACTIONS
+                    ========================== -->
+
+                    <div class="confirmation-actions">
+
+                        <a
+                            href="index.html#shop"
+                            class="primary-button"
+                        >
+                            Continue Shopping
+                        </a>
+
+
+                        <a
+                            href="index.html"
+                            class="secondary-button"
+                        >
+                            Return Home
+                        </a>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menu-toggle"
+            );
+
+
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
+
+
+                const menuIsOpen =
+                    navLinks.classList.contains(
+                        "nav-open"
+                    );
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
+
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           ELEMENTS
+        ========================== */
+
+        const loadingSection =
+            document.getElementById(
+                "confirmation-loading"
+            );
+
+
+        const errorSection =
+            document.getElementById(
+                "confirmation-error"
+            );
+
+
+        const errorMessage =
+            document.getElementById(
+                "confirmation-error-message"
+            );
+
+
+        const confirmationContent =
+            document.getElementById(
+                "confirmation-content"
+            );
+
+
+        const confirmationItems =
+            document.getElementById(
+                "confirmation-items"
+            );
+
+
+        const basketCount =
+            document.getElementById(
+                "basket-count"
+            );
+
+
+
+        /* =========================
+           SHOW ERROR
+        ========================== */
+
+        function showError(message) {
+
+            loadingSection.style.display =
+                "none";
+
+
+            confirmationContent.style.display =
+                "none";
+
+
+            errorSection.style.display =
+                "block";
+
+
+            errorMessage.textContent =
+                message;
+
+        }
+
+
+
+        /* =========================
+           FORMAT DATE
+        ========================== */
+
+        function formatOrderDate(dateValue) {
+
+            const date =
+                new Date(dateValue);
+
+
+            return date.toLocaleDateString(
+                "en-GB",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           CREATE SHORT REFERENCE
+        ========================== */
+
+        function createOrderReference(orderId) {
+
+            return (
+                "PAC-" +
+                orderId
+                    .replaceAll("-", "")
+                    .slice(0, 8)
+                    .toUpperCase()
+            );
+
+        }
+
+
+
+        /* =========================
+           LOAD ORDER
+        ========================== */
+
+        async function loadOrder() {
+
+
+            /* GET LOGGED-IN USER */
+
+            const {
+                data: { session }
+            } =
+                await supabaseClient.auth
+                    .getSession();
+
+
+
+            if (!session) {
+
+                window.location.href =
+                    "account.html";
+
+                return;
+
+            }
+
+
+
+            const user =
+                session.user;
+
+
+
+            /* GET ORDER ID FROM URL */
+
+            const parameters =
+                new URLSearchParams(
+                    window.location.search
+                );
+
+
+            const orderId =
+                parameters.get("order");
+
+
+
+            if (!orderId) {
+
+                showError(
+                    "No order reference was provided."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               GET ORDER
+            ========================== */
+
+            const {
+                data: order,
+                error: orderError
+            } =
+                await supabaseClient
+                    .from("orders")
+                    .select(
+                        `
+                        id,
+                        user_id,
+                        customer_name,
+                        email,
+                        phone,
+                        address,
+                        city,
+                        postal_code,
+                        country,
+                        delivery_notes,
+                        status,
+                        created_at
+                        `
+                    )
+                    .eq(
+                        "id",
+                        orderId
+                    )
+                    .eq(
+                        "user_id",
+                        user.id
+                    )
+                    .single();
+
+
+
+            if (orderError || !order) {
+
+                console.error(
+                    "Order loading error:",
+                    orderError
+                );
+
+
+                showError(
+                    "We couldn't find this order."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               GET ORDER ITEMS
+            ========================== */
+
+            const {
+                data: items,
+                error: itemsError
+            } =
+                await supabaseClient
+                    .from("order_items")
+                    .select(
+                        `
+                        id,
+                        product_name,
+                        category,
+                        colour,
+                        quantity
+                        `
+                    )
+                    .eq(
+                        "order_id",
+                        order.id
+                    );
+
+
+
+            if (itemsError) {
+
+                console.error(
+                    "Order items error:",
+                    itemsError
+                );
+
+
+                showError(
+                    "The order was found, but the items couldn't be loaded."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               DISPLAY ORDER
+            ========================== */
+
+            document.getElementById(
+                "order-reference"
+            ).textContent =
+                createOrderReference(
+                    order.id
+                );
+
+
+            document.getElementById(
+                "order-date"
+            ).textContent =
+                formatOrderDate(
+                    order.created_at
+                );
+
+
+            document.getElementById(
+                "order-status"
+            ).textContent =
+                order.status
+                    .replaceAll("_", " ")
+                    .replace(
+                        /\b\w/g,
+                        function (letter) {
+
+                            return letter.toUpperCase();
+
+                        }
+                    );
+
+
+            document.getElementById(
+                "order-email"
+            ).textContent =
+                order.email;
+
+
+
+            /* DELIVERY */
+
+            document.getElementById(
+                "delivery-name"
+            ).textContent =
+                order.customer_name;
+
+
+            document.getElementById(
+                "delivery-address"
+            ).textContent =
+                order.address;
+
+
+            document.getElementById(
+                "delivery-city"
+            ).textContent =
+                `${order.postal_code} ${order.city}`;
+
+
+            document.getElementById(
+                "delivery-country"
+            ).textContent =
+                order.country;
+
+
+            document.getElementById(
+                "delivery-phone"
+            ).textContent =
+                order.phone;
+
+
+
+            /* =========================
+               DISPLAY ITEMS
+            ========================== */
+
+            confirmationItems.innerHTML =
+                "";
+
+
+            items.forEach(
+                function (item) {
+
+
+                    const itemElement =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    itemElement.className =
+                        "confirmation-item";
+
+
+                    itemElement.innerHTML = `
+
+                        <div class="confirmation-item-info">
+
+                            <p class="product-category">
+                                ${item.category}
+                            </p>
+
+                            <h3>
+                                ${item.product_name}
+                            </h3>
+
+                            <p>
+                                Colour:
+                                <strong>
+                                    ${item.colour || "N/A"}
+                                </strong>
+                            </p>
+
+                            <p>
+                                Quantity:
+                                <strong>
+                                    ${item.quantity}
+                                </strong>
+                            </p>
+
+                        </div>
+
+                    `;
+
+
+                    confirmationItems.appendChild(
+                        itemElement
+                    );
+
+                }
+            );
+
+
+
+            /* =========================
+               CLEAR BASKET
+            ========================== */
+
+            localStorage.removeItem(
+                "painAuCrochetBasket"
+            );
+
+
+            basketCount.textContent =
+                "0";
+
+
+
+            /* =========================
+               SHOW PAGE
+            ========================== */
+
+            loadingSection.style.display =
+                "none";
+
+
+            errorSection.style.display =
+                "none";
+
+
+            confirmationContent.style.display =
+                "block";
+
+        }
+
+
+
+        /* =========================
+           START
+        ========================== */
+
+        loadOrder();
+
+
+    </script>
+
+
+</body>
+
+</html>

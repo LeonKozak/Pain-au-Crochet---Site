@@ -72,8 +72,6 @@
                 </a>
 
 
-                <!-- BASKET -->
-
                 <a
                     href="basket.html"
                     class="basket-nav-link"
@@ -86,11 +84,8 @@
                     >
                         0
                     </span>
-
                 </a>
 
-
-                <!-- ACCOUNT -->
 
                 <a
                     href="account.html"
@@ -154,7 +149,7 @@
                 <div class="account-card">
 
 
-                    <!-- TAB BUTTONS -->
+                    <!-- TABS -->
 
                     <div class="account-tabs">
 
@@ -180,7 +175,7 @@
 
 
                     <!-- =========================
-                         SIGN IN FORM
+                         SIGN IN
                     ========================== -->
 
                     <div
@@ -205,8 +200,6 @@
                         <form id="sign-in-form">
 
 
-                            <!-- EMAIL -->
-
                             <div class="form-group">
 
                                 <label for="sign-in-email">
@@ -216,7 +209,6 @@
                                 <input
                                     type="email"
                                     id="sign-in-email"
-                                    name="email"
                                     placeholder="you@example.com"
                                     autocomplete="email"
                                     required
@@ -225,8 +217,6 @@
                             </div>
 
 
-
-                            <!-- PASSWORD -->
 
                             <div class="form-group">
 
@@ -237,7 +227,6 @@
                                 <input
                                     type="password"
                                     id="sign-in-password"
-                                    name="password"
                                     placeholder="Enter your password"
                                     autocomplete="current-password"
                                     required
@@ -246,8 +235,6 @@
                             </div>
 
 
-
-                            <!-- FORGOT PASSWORD -->
 
                             <div class="forgot-password">
 
@@ -259,17 +246,17 @@
 
 
 
-                            <!-- SUBMIT -->
-
                             <button
                                 type="submit"
                                 class="account-submit-button"
+                                id="sign-in-button"
                             >
                                 Sign In
                             </button>
 
 
                             <p class="account-switch-text">
+
                                 Don't have an account?
 
                                 <button
@@ -278,6 +265,7 @@
                                 >
                                     Create one
                                 </button>
+
                             </p>
 
 
@@ -294,7 +282,7 @@
 
 
                     <!-- =========================
-                         CREATE ACCOUNT FORM
+                         CREATE ACCOUNT
                     ========================== -->
 
                     <div
@@ -331,7 +319,6 @@
                                 <input
                                     type="text"
                                     id="create-name"
-                                    name="name"
                                     placeholder="Your name"
                                     autocomplete="name"
                                     required
@@ -352,7 +339,6 @@
                                 <input
                                     type="email"
                                     id="create-email"
-                                    name="email"
                                     placeholder="you@example.com"
                                     autocomplete="email"
                                     required
@@ -373,7 +359,6 @@
                                 <input
                                     type="password"
                                     id="create-password"
-                                    name="password"
                                     placeholder="Create a password"
                                     minlength="8"
                                     autocomplete="new-password"
@@ -399,7 +384,6 @@
                                 <input
                                     type="password"
                                     id="confirm-password"
-                                    name="confirm-password"
                                     placeholder="Enter your password again"
                                     minlength="8"
                                     autocomplete="new-password"
@@ -410,17 +394,17 @@
 
 
 
-                            <!-- SUBMIT -->
-
                             <button
                                 type="submit"
                                 class="account-submit-button"
+                                id="create-account-button"
                             >
                                 Create Account
                             </button>
 
 
                             <p class="account-switch-text">
+
                                 Already have an account?
 
                                 <button
@@ -429,6 +413,7 @@
                                 >
                                     Sign in
                                 </button>
+
                             </p>
 
 
@@ -462,13 +447,11 @@
             © 2026 Pain au Crochet
         </p>
 
-
         <div class="footer-links">
 
             <a href="#">
                 Instagram
             </a>
-
 
             <a href="#">
                 Contact
@@ -481,7 +464,19 @@
 
 
     <!-- =========================
-         JAVASCRIPT
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
     ========================== -->
 
     <script>
@@ -504,16 +499,13 @@
 
                 navLinks.classList.toggle("nav-open");
 
-
                 const menuIsOpen =
                     navLinks.classList.contains("nav-open");
-
 
                 menuToggle.setAttribute(
                     "aria-expanded",
                     menuIsOpen
                 );
-
 
                 menuToggle.textContent =
                     menuIsOpen ? "✕" : "☰";
@@ -524,27 +516,28 @@
 
         document
             .querySelectorAll(".nav-links a")
-            .forEach(
-                function (link) {
+            .forEach(function (link) {
 
-                    link.addEventListener(
-                        "click",
-                        function () {
+                link.addEventListener(
+                    "click",
+                    function () {
 
-                            navLinks.classList.remove("nav-open");
+                        navLinks.classList.remove(
+                            "nav-open"
+                        );
 
-                            menuToggle.setAttribute(
-                                "aria-expanded",
-                                "false"
-                            );
+                        menuToggle.setAttribute(
+                            "aria-expanded",
+                            "false"
+                        );
 
-                            menuToggle.textContent = "☰";
+                        menuToggle.textContent =
+                            "☰";
 
-                        }
-                    );
+                    }
+                );
 
-                }
-            );
+            });
 
 
 
@@ -553,7 +546,9 @@
         ========================== */
 
         const basketCount =
-            document.getElementById("basket-count");
+            document.getElementById(
+                "basket-count"
+            );
 
 
         function updateBasketCount() {
@@ -593,7 +588,9 @@
         ========================== */
 
         const signInTab =
-            document.getElementById("sign-in-tab");
+            document.getElementById(
+                "sign-in-tab"
+            );
 
         const createAccountTab =
             document.getElementById(
@@ -621,7 +618,6 @@
             );
 
 
-
         function showSignIn() {
 
             signInTab.classList.add("active");
@@ -630,7 +626,9 @@
                 "active"
             );
 
-            signInSection.classList.add("active");
+            signInSection.classList.add(
+                "active"
+            );
 
             createAccountSection.classList.remove(
                 "active"
@@ -639,14 +637,15 @@
         }
 
 
-
         function showCreateAccount() {
 
             createAccountTab.classList.add(
                 "active"
             );
 
-            signInTab.classList.remove("active");
+            signInTab.classList.remove(
+                "active"
+            );
 
             createAccountSection.classList.add(
                 "active"
@@ -657,7 +656,6 @@
             );
 
         }
-
 
 
         signInTab.addEventListener(
@@ -686,7 +684,39 @@
 
 
         /* =========================
-           SIGN IN FORM
+           REDIRECT
+        ========================== */
+
+        const urlParameters =
+            new URLSearchParams(
+                window.location.search
+            );
+
+
+        const redirectTarget =
+            urlParameters.get("redirect");
+
+
+        function redirectAfterLogin() {
+
+            if (redirectTarget === "basket") {
+
+                window.location.href =
+                    "basket.html";
+
+            } else {
+
+                window.location.href =
+                    "index.html";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           SIGN IN
         ========================== */
 
         const signInForm =
@@ -699,20 +729,91 @@
                 "sign-in-message"
             );
 
+        const signInButton =
+            document.getElementById(
+                "sign-in-button"
+            );
+
 
         signInForm.addEventListener(
             "submit",
-            function (event) {
+            async function (event) {
 
                 event.preventDefault();
 
 
-                signInMessage.textContent =
-                    "Sign in will be activated when the secure account system is connected.";
+                const email =
+                    document
+                        .getElementById(
+                            "sign-in-email"
+                        )
+                        .value
+                        .trim();
 
+
+                const password =
+                    document
+                        .getElementById(
+                            "sign-in-password"
+                        )
+                        .value;
+
+
+                signInButton.disabled = true;
+
+                signInButton.textContent =
+                    "Signing In...";
+
+
+                signInMessage.classList.remove(
+                    "show",
+                    "error"
+                );
+
+
+                const { data, error } =
+                    await supabaseClient.auth
+                        .signInWithPassword({
+
+                            email: email,
+
+                            password: password
+
+                        });
+
+
+                if (error) {
+
+                    signInMessage.textContent =
+                        error.message;
+
+                    signInMessage.classList.add(
+                        "show",
+                        "error"
+                    );
+
+
+                    signInButton.disabled = false;
+
+                    signInButton.textContent =
+                        "Sign In";
+
+                    return;
+
+                }
+
+
+                signInMessage.textContent =
+                    "Signed in successfully!";
 
                 signInMessage.classList.add(
                     "show"
+                );
+
+
+                setTimeout(
+                    redirectAfterLogin,
+                    700
                 );
 
             }
@@ -721,7 +822,7 @@
 
 
         /* =========================
-           CREATE ACCOUNT FORM
+           CREATE ACCOUNT
         ========================== */
 
         const createAccountForm =
@@ -734,26 +835,60 @@
                 "create-account-message"
             );
 
+        const createAccountButton =
+            document.getElementById(
+                "create-account-button"
+            );
+
 
         createAccountForm.addEventListener(
             "submit",
-            function (event) {
+            async function (event) {
 
                 event.preventDefault();
 
 
+                const name =
+                    document
+                        .getElementById(
+                            "create-name"
+                        )
+                        .value
+                        .trim();
+
+
+                const email =
+                    document
+                        .getElementById(
+                            "create-email"
+                        )
+                        .value
+                        .trim();
+
+
                 const password =
-                    document.getElementById(
-                        "create-password"
-                    ).value;
+                    document
+                        .getElementById(
+                            "create-password"
+                        )
+                        .value;
 
 
                 const confirmPassword =
-                    document.getElementById(
-                        "confirm-password"
-                    ).value;
+                    document
+                        .getElementById(
+                            "confirm-password"
+                        )
+                        .value;
 
 
+                createAccountMessage.classList.remove(
+                    "show",
+                    "error"
+                );
+
+
+                /* PASSWORD CHECK */
 
                 if (password !== confirmPassword) {
 
@@ -761,10 +896,7 @@
                         "The passwords do not match.";
 
                     createAccountMessage.classList.add(
-                        "show"
-                    );
-
-                    createAccountMessage.classList.add(
+                        "show",
                         "error"
                     );
 
@@ -773,18 +905,108 @@
                 }
 
 
-                createAccountMessage.classList.remove(
-                    "error"
-                );
+                createAccountButton.disabled =
+                    true;
+
+                createAccountButton.textContent =
+                    "Creating Account...";
 
 
-                createAccountMessage.textContent =
-                    "Your details look good. Account creation will be activated when the secure account system is connected.";
+                /* CREATE USER IN SUPABASE */
+
+                const { data, error } =
+                    await supabaseClient.auth
+                        .signUp({
+
+                            email: email,
+
+                            password: password,
+
+                            options: {
+
+                                data: {
+
+                                    name: name
+
+                                }
+
+                            }
+
+                        });
 
 
-                createAccountMessage.classList.add(
-                    "show"
-                );
+
+                /* ERROR */
+
+                if (error) {
+
+                    createAccountMessage.textContent =
+                        error.message;
+
+                    createAccountMessage.classList.add(
+                        "show",
+                        "error"
+                    );
+
+
+                    createAccountButton.disabled =
+                        false;
+
+                    createAccountButton.textContent =
+                        "Create Account";
+
+                    return;
+
+                }
+
+
+
+                /*
+                    If Supabase immediately gives
+                    us a session, the user is
+                    already logged in.
+                */
+
+                if (data.session) {
+
+                    createAccountMessage.textContent =
+                        "Account created successfully!";
+
+                    createAccountMessage.classList.add(
+                        "show"
+                    );
+
+
+                    setTimeout(
+                        redirectAfterLogin,
+                        700
+                    );
+
+                }
+
+
+                /*
+                    Otherwise email confirmation
+                    is required.
+                */
+
+                else {
+
+                    createAccountMessage.textContent =
+                        "Account created! Check your email to confirm your account before signing in.";
+
+                    createAccountMessage.classList.add(
+                        "show"
+                    );
+
+
+                    createAccountButton.disabled =
+                        false;
+
+                    createAccountButton.textContent =
+                        "Create Account";
+
+                }
 
             }
         );

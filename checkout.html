@@ -1,0 +1,1177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Checkout | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="checkout-page">
+
+            <div class="checkout-container">
+
+
+                <!-- HEADING -->
+
+                <div class="checkout-heading">
+
+                    <a
+                        href="basket.html"
+                        class="back-link"
+                    >
+                        ← Back to Basket
+                    </a>
+
+
+                    <p class="eyebrow">
+                        Checkout
+                    </p>
+
+
+                    <h1>
+                        Complete Your Order
+                    </h1>
+
+
+                    <p>
+                        Enter your delivery details and review your
+                        handmade pieces before placing your order.
+                    </p>
+
+                </div>
+
+
+
+                <!-- =========================
+                     CHECKOUT LAYOUT
+                ========================== -->
+
+                <div class="checkout-layout">
+
+
+                    <!-- =========================
+                         DELIVERY FORM
+                    ========================== -->
+
+                    <div class="checkout-form-card">
+
+                        <h2>
+                            Delivery Details
+                        </h2>
+
+
+                        <form id="checkout-form">
+
+
+                            <!-- NAME -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-name">
+                                    Full name
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-name"
+                                    autocomplete="name"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- EMAIL -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-email">
+                                    Email address
+                                </label>
+
+                                <input
+                                    type="email"
+                                    id="checkout-email"
+                                    autocomplete="email"
+                                    readonly
+                                >
+
+                                <p class="form-help">
+                                    This is the email connected to your account.
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- PHONE -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-phone">
+                                    Phone number
+                                </label>
+
+                                <input
+                                    type="tel"
+                                    id="checkout-phone"
+                                    placeholder="+34..."
+                                    autocomplete="tel"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- ADDRESS -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-address">
+                                    Address
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="checkout-address"
+                                    placeholder="Street and house number"
+                                    autocomplete="street-address"
+                                    required
+                                >
+
+                            </div>
+
+
+
+                            <!-- CITY / POSTCODE -->
+
+                            <div class="checkout-form-row">
+
+                                <div class="form-group">
+
+                                    <label for="checkout-city">
+                                        City
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="checkout-city"
+                                        autocomplete="address-level2"
+                                        required
+                                    >
+
+                                </div>
+
+
+                                <div class="form-group">
+
+                                    <label for="checkout-postcode">
+                                        Postal code
+                                    </label>
+
+                                    <input
+                                        type="text"
+                                        id="checkout-postcode"
+                                        autocomplete="postal-code"
+                                        required
+                                    >
+
+                                </div>
+
+                            </div>
+
+
+
+                            <!-- COUNTRY -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-country">
+                                    Country
+                                </label>
+
+                                <select
+                                    id="checkout-country"
+                                    required
+                                >
+
+                                    <option value="">
+                                        Select country
+                                    </option>
+
+                                    <option value="Spain">
+                                        Spain
+                                    </option>
+
+                                    <option value="Ireland">
+                                        Ireland
+                                    </option>
+
+                                    <option value="Netherlands">
+                                        Netherlands
+                                    </option>
+
+                                    <option value="France">
+                                        France
+                                    </option>
+
+                                    <option value="Germany">
+                                        Germany
+                                    </option>
+
+                                    <option value="Portugal">
+                                        Portugal
+                                    </option>
+
+                                    <option value="Other EU">
+                                        Other EU country
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+
+                            <!-- NOTES -->
+
+                            <div class="form-group">
+
+                                <label for="checkout-notes">
+                                    Delivery notes
+                                </label>
+
+                                <textarea
+                                    id="checkout-notes"
+                                    rows="4"
+                                    placeholder="Apartment number, delivery instructions or anything else we should know..."
+                                ></textarea>
+
+                                <p class="form-help">
+                                    Optional
+                                </p>
+
+                            </div>
+
+
+
+                            <!-- SUBMIT -->
+
+                            <button
+                                type="submit"
+                                class="checkout-place-order-button"
+                                id="place-order-button"
+                            >
+                                Review Order
+                            </button>
+
+
+                            <p class="checkout-payment-note">
+                                No payment will be taken yet.
+                            </p>
+
+
+                            <div
+                                class="account-message"
+                                id="checkout-message"
+                            >
+                            </div>
+
+
+                        </form>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ORDER REVIEW
+                    ========================== -->
+
+                    <aside class="checkout-summary">
+
+                        <h2>
+                            Your Order
+                        </h2>
+
+
+                        <div
+                            class="checkout-items"
+                            id="checkout-items"
+                        >
+                        </div>
+
+
+                        <div class="checkout-summary-divider"></div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Items
+                            </span>
+
+                            <span id="checkout-item-count">
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Delivery
+                            </span>
+
+                            <span>
+                                Calculated later
+                            </span>
+
+                        </div>
+
+
+                        <div class="summary-price-note">
+
+                            <p>
+                                Product prices are still being finalised.
+                                Final pricing and payment will be added
+                                before the store goes live.
+                            </p>
+
+                        </div>
+
+
+                    </aside>
+
+                </div>
+
+
+
+                <!-- =========================
+                     EMPTY BASKET
+                ========================== -->
+
+                <div
+                    class="checkout-empty"
+                    id="checkout-empty"
+                >
+
+                    <h2>
+                        Your basket is empty
+                    </h2>
+
+                    <p>
+                        Add something to your basket before checking out.
+                    </p>
+
+                    <a
+                        href="index.html#shop"
+                        class="primary-button"
+                    >
+                        Browse the Collection
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menu-toggle"
+            );
+
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
+
+
+                const menuIsOpen =
+                    navLinks.classList.contains(
+                        "nav-open"
+                    );
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
+
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           ELEMENTS
+        ========================== */
+
+        const checkoutLayout =
+            document.querySelector(
+                ".checkout-layout"
+            );
+
+
+        const checkoutEmpty =
+            document.getElementById(
+                "checkout-empty"
+            );
+
+
+        const checkoutItems =
+            document.getElementById(
+                "checkout-items"
+            );
+
+
+        const checkoutItemCount =
+            document.getElementById(
+                "checkout-item-count"
+            );
+
+
+        const basketCount =
+            document.getElementById(
+                "basket-count"
+            );
+
+
+        const checkoutForm =
+            document.getElementById(
+                "checkout-form"
+            );
+
+
+        const checkoutMessage =
+            document.getElementById(
+                "checkout-message"
+            );
+
+
+        const placeOrderButton =
+            document.getElementById(
+                "place-order-button"
+            );
+
+
+
+        /* =========================
+           BASKET
+        ========================== */
+
+        const basket =
+            JSON.parse(
+                localStorage.getItem(
+                    "painAuCrochetBasket"
+                )
+            ) || [];
+
+
+
+        function getTotalItems() {
+
+            return basket.reduce(
+                function (total, item) {
+
+                    return total +
+                        (item.quantity || 1);
+
+                },
+                0
+            );
+
+        }
+
+
+
+        function renderCheckoutBasket() {
+
+
+            const totalItems =
+                getTotalItems();
+
+
+            basketCount.textContent =
+                totalItems;
+
+
+            checkoutItemCount.textContent =
+                totalItems;
+
+
+
+            /* EMPTY */
+
+            if (basket.length === 0) {
+
+                checkoutLayout.style.display =
+                    "none";
+
+
+                checkoutEmpty.style.display =
+                    "block";
+
+
+                return;
+
+            }
+
+
+
+            /* HAS ITEMS */
+
+            checkoutLayout.style.display =
+                "grid";
+
+
+            checkoutEmpty.style.display =
+                "none";
+
+
+            checkoutItems.innerHTML =
+                "";
+
+
+
+            basket.forEach(
+                function (item) {
+
+
+                    const itemElement =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    itemElement.className =
+                        "checkout-item";
+
+
+                    itemElement.innerHTML = `
+
+                        <div class="checkout-item-image">
+
+                            <img
+                                src="${item.image}"
+                                alt="${item.name}"
+                            >
+
+                        </div>
+
+
+                        <div class="checkout-item-info">
+
+                            <strong>
+                                ${item.name}
+                            </strong>
+
+                            <span>
+                                ${item.colour}
+                            </span>
+
+                            <span>
+                                Quantity:
+                                ${item.quantity || 1}
+                            </span>
+
+                        </div>
+
+                    `;
+
+
+                    checkoutItems.appendChild(
+                        itemElement
+                    );
+
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           REQUIRE LOGIN
+        ========================== */
+
+        async function loadCustomer() {
+
+
+            const {
+                data: { session }
+            } =
+                await supabaseClient.auth
+                    .getSession();
+
+
+
+            /*
+                No login:
+                send user to account page.
+            */
+
+            if (!session) {
+
+                window.location.href =
+                    "account.html?redirect=basket";
+
+                return;
+
+            }
+
+
+
+            const user =
+                session.user;
+
+
+
+            /* PREFILL NAME */
+
+            const name =
+                user.user_metadata?.name || "";
+
+
+            document.getElementById(
+                "checkout-name"
+            ).value =
+                name;
+
+
+
+            /* PREFILL EMAIL */
+
+            document.getElementById(
+                "checkout-email"
+            ).value =
+                user.email || "";
+
+        }
+/* =========================
+   CREATE REAL ORDER
+========================= */
+
+checkoutForm.addEventListener(
+    "submit",
+    async function (event) {
+
+        event.preventDefault();
+
+
+        if (basket.length === 0) {
+            return;
+        }
+
+
+        checkoutMessage.classList.remove(
+            "show",
+            "error"
+        );
+
+
+        placeOrderButton.disabled = true;
+
+        placeOrderButton.textContent =
+            "Saving Order...";
+
+
+        /* GET LOGGED-IN USER */
+
+        const {
+            data: { session }
+        } =
+            await supabaseClient.auth
+                .getSession();
+
+
+        if (!session) {
+
+            window.location.href =
+                "account.html?redirect=basket";
+
+            return;
+
+        }
+
+
+        const user =
+            session.user;
+
+
+
+        /* =========================
+           DELIVERY DETAILS
+        ========================== */
+
+        const customerName =
+            document.getElementById(
+                "checkout-name"
+            ).value.trim();
+
+
+        const phone =
+            document.getElementById(
+                "checkout-phone"
+            ).value.trim();
+
+
+        const address =
+            document.getElementById(
+                "checkout-address"
+            ).value.trim();
+
+
+        const city =
+            document.getElementById(
+                "checkout-city"
+            ).value.trim();
+
+
+        const postalCode =
+            document.getElementById(
+                "checkout-postcode"
+            ).value.trim();
+
+
+        const country =
+            document.getElementById(
+                "checkout-country"
+            ).value;
+
+
+        const deliveryNotes =
+            document.getElementById(
+                "checkout-notes"
+            ).value.trim();
+
+
+
+        /* =========================
+           CREATE ORDER
+        ========================== */
+
+        const {
+            data: newOrder,
+            error: orderError
+        } =
+            await supabaseClient
+                .from("orders")
+                .insert({
+
+                    user_id:
+                        user.id,
+
+                    customer_name:
+                        customerName,
+
+                    email:
+                        user.email,
+
+                    phone:
+                        phone,
+
+                    address:
+                        address,
+
+                    city:
+                        city,
+
+                    postal_code:
+                        postalCode,
+
+                    country:
+                        country,
+
+                    delivery_notes:
+                        deliveryNotes || null,
+
+                    status:
+                        "pending"
+
+                })
+                .select("id")
+                .single();
+
+
+
+        /* ORDER ERROR */
+
+        if (orderError) {
+
+            console.error(
+                "Order error:",
+                orderError
+            );
+
+
+            checkoutMessage.textContent =
+                "We couldn't save your order. Please try again.";
+
+
+            checkoutMessage.classList.add(
+                "show",
+                "error"
+            );
+
+
+            placeOrderButton.disabled =
+                false;
+
+
+            placeOrderButton.textContent =
+                "Review Order";
+
+
+            return;
+
+        }
+
+
+
+        /* =========================
+           CREATE ORDER ITEMS
+        ========================== */
+
+        const orderItems =
+            basket.map(
+                function (item) {
+
+                    return {
+
+                        order_id:
+                            newOrder.id,
+
+                        product_name:
+                            item.name,
+
+                        category:
+                            item.category,
+
+                        colour:
+                            item.colour,
+
+                        quantity:
+                            item.quantity || 1
+
+                    };
+
+                }
+            );
+
+
+
+        const {
+            error: itemsError
+        } =
+            await supabaseClient
+                .from("order_items")
+                .insert(orderItems);
+
+
+
+        /* ITEMS ERROR */
+
+        if (itemsError) {
+
+            console.error(
+                "Order items error:",
+                itemsError
+            );
+
+
+            checkoutMessage.textContent =
+                "The order was created, but there was a problem saving the products. Please contact us before trying again.";
+
+
+            checkoutMessage.classList.add(
+                "show",
+                "error"
+            );
+
+
+            placeOrderButton.disabled =
+                false;
+
+
+            placeOrderButton.textContent =
+                "Review Order";
+
+
+            return;
+
+        }
+
+        /* =========================
+        SUCCESS
+        ========================= */
+
+        checkoutMessage.textContent =
+            "Order saved successfully! Redirecting...";
+
+
+        checkoutMessage.classList.add(
+            "show"
+        );
+
+
+        placeOrderButton.textContent =
+            "Order Saved ✓";
+
+
+/*
+    Send the customer to the
+    confirmation page.
+
+    We pass the real Supabase
+    order ID in the URL.
+*/
+
+        setTimeout(
+            function () {
+
+                window.location.href =
+                "order-confirmation.html?order=" +
+                encodeURIComponent(newOrder.id);
+
+            },
+        1000
+    );
+
+
+
+        
+
+    }
+);
+
+
+
+      
+
+
+
+        /* =========================
+           START PAGE
+        ========================== */
+
+        renderCheckoutBasket();
+
+        loadCustomer();
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,9 +16,12 @@
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
 
+
 <body>
+
 
     <!-- =========================
          HEADER
@@ -27,12 +31,14 @@
 
         <nav class="navbar">
 
+
             <a
                 href="index.html"
                 class="mobile-brand"
             >
                 Pain au Crochet
             </a>
+
 
             <button
                 class="menu-toggle"
@@ -43,56 +49,72 @@
                 ☰
             </button>
 
+
             <div
                 class="nav-links"
                 id="nav-links"
             >
 
+
                 <a href="index.html">
                     Home
                 </a>
+
 
                 <a href="index.html#shop">
                     Shop
                 </a>
 
+
                 <a href="custom-order.html">
                     Custom Orders
                 </a>
+
 
                 <a href="index.html#about">
                     About
                 </a>
 
+
                 <a href="index.html#contact">
                     Contact
                 </a>
+
+
+                <!-- BASKET -->
 
                 <a
                     href="basket.html"
                     class="basket-nav-link"
                 >
                     Basket
+
                     <span
                         class="basket-count"
                         id="basket-count"
                     >
                         0
                     </span>
+
                 </a>
 
+
+                <!-- ACCOUNT -->
+
                 <a
-                    href="account.html?redirect=basket"
-                    class="checkout-button checkout-link"
+                    href="account.html"
+                    class="sign-in"
                 >
-                    Sign In to Continue
+                    Sign In
                 </a>
+
 
             </div>
 
         </nav>
 
     </header>
+
 
 
     <!-- =========================
@@ -106,7 +128,9 @@
             <div class="basket-container">
 
 
-                <!-- PAGE HEADING -->
+                <!-- =========================
+                     PAGE HEADING
+                ========================== -->
 
                 <div class="basket-heading">
 
@@ -117,13 +141,16 @@
                         ← Continue Shopping
                     </a>
 
+
                     <p class="eyebrow">
                         Your order
                     </p>
 
+
                     <h1>
                         Your Basket
                     </h1>
+
 
                     <p>
                         Review the handmade pieces you've selected
@@ -133,7 +160,10 @@
                 </div>
 
 
-                <!-- BASKET CONTENT -->
+
+                <!-- =========================
+                     BASKET CONTENT
+                ========================== -->
 
                 <div
                     class="basket-layout"
@@ -150,12 +180,16 @@
                     </div>
 
 
-                    <!-- SUMMARY -->
+
+                    <!-- =========================
+                         ORDER SUMMARY
+                    ========================== -->
 
                     <aside
                         class="basket-summary"
                         id="basket-summary"
                     >
+
 
                         <h2>
                             Order Summary
@@ -188,6 +222,7 @@
                         </div>
 
 
+
                         <div class="summary-price-note">
 
                             <p>
@@ -198,41 +233,54 @@
                         </div>
 
 
+
+                        <!-- CHECKOUT BUTTON -->
+
                         <a
-                        href="account.html"
-                        class="checkout-button checkout-link"
+                            href="account.html?redirect=basket"
+                            class="checkout-button checkout-link"
+                            id="checkout-button"
                         >
-                        Sign In to Continue
-                    </a>
+                            Sign In to Continue
+                        </a>
 
 
                         <p class="checkout-note">
-                            Sign in or create an account to continue with your order.
+                            Sign in or create an account to continue
+                            with your order.
                         </p>
+
 
                     </aside>
 
                 </div>
 
 
-                <!-- EMPTY BASKET -->
+
+                <!-- =========================
+                     EMPTY BASKET
+                ========================== -->
 
                 <div
                     class="empty-basket"
                     id="empty-basket"
                 >
 
+
                     <div class="empty-basket-icon">
                         ♡
                     </div>
+
 
                     <h2>
                         Your basket is empty
                     </h2>
 
+
                     <p>
                         You haven't added any handmade pieces yet.
                     </p>
+
 
                     <a
                         href="index.html#shop"
@@ -240,6 +288,7 @@
                     >
                         Browse the Collection
                     </a>
+
 
                 </div>
 
@@ -249,6 +298,7 @@
         </section>
 
     </main>
+
 
 
     <!-- =========================
@@ -261,11 +311,13 @@
             © 2026 Pain au Crochet
         </p>
 
+
         <div class="footer-links">
 
             <a href="#">
                 Instagram
             </a>
+
 
             <a href="#">
                 Contact
@@ -276,36 +328,64 @@
     </footer>
 
 
+
     <!-- =========================
-         JAVASCRIPT
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
     ========================== -->
 
     <script>
+
 
         /* =========================
            MOBILE MENU
         ========================== */
 
         const menuToggle =
-            document.getElementById("menu-toggle");
+            document.getElementById(
+                "menu-toggle"
+            );
+
 
         const navLinks =
-            document.getElementById("nav-links");
+            document.getElementById(
+                "nav-links"
+            );
 
 
         menuToggle.addEventListener(
             "click",
             function () {
 
-                navLinks.classList.toggle("nav-open");
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
+
 
                 const menuIsOpen =
-                    navLinks.classList.contains("nav-open");
+                    navLinks.classList.contains(
+                        "nav-open"
+                    );
+
 
                 menuToggle.setAttribute(
                     "aria-expanded",
                     menuIsOpen
                 );
+
 
                 menuToggle.textContent =
                     menuIsOpen ? "✕" : "☰";
@@ -314,56 +394,82 @@
         );
 
 
+
         document
             .querySelectorAll(".nav-links a")
-            .forEach(function (link) {
+            .forEach(
+                function (link) {
 
-                link.addEventListener(
-                    "click",
-                    function () {
+                    link.addEventListener(
+                        "click",
+                        function () {
 
-                        navLinks.classList.remove("nav-open");
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
 
-                        menuToggle.setAttribute(
-                            "aria-expanded",
-                            "false"
-                        );
 
-                        menuToggle.textContent = "☰";
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
 
-                    }
-                );
 
-            });
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
 
 
         /* =========================
-           BASKET
+           BASKET ELEMENTS
         ========================== */
 
         const basketItemsContainer =
-            document.getElementById("basket-items");
+            document.getElementById(
+                "basket-items"
+            );
+
 
         const emptyBasket =
-            document.getElementById("empty-basket");
+            document.getElementById(
+                "empty-basket"
+            );
+
 
         const basketLayout =
-            document.getElementById("basket-layout");
+            document.getElementById(
+                "basket-layout"
+            );
+
 
         const basketCount =
-            document.getElementById("basket-count");
+            document.getElementById(
+                "basket-count"
+            );
+
 
         const summaryItemCount =
-            document.getElementById("summary-item-count");
+            document.getElementById(
+                "summary-item-count"
+            );
 
 
-        /*
-            Retrieve the basket saved by the
-            product pages.
+        const checkoutButton =
+            document.getElementById(
+                "checkout-button"
+            );
 
-            If no basket exists yet,
-            start with an empty array.
-        */
+
+
+        /* =========================
+           LOAD BASKET
+        ========================== */
 
         let basket =
             JSON.parse(
@@ -371,6 +477,7 @@
                     "painAuCrochetBasket"
                 )
             ) || [];
+
 
 
         /* =========================
@@ -387,19 +494,26 @@
         }
 
 
+
         /* =========================
            REMOVE ITEM
         ========================== */
 
         function removeBasketItem(index) {
 
-            basket.splice(index, 1);
+            basket.splice(
+                index,
+                1
+            );
+
 
             saveBasket();
+
 
             renderBasket();
 
         }
+
 
 
         /* =========================
@@ -408,13 +522,10 @@
 
         function renderBasket() {
 
-            basketItemsContainer.innerHTML = "";
 
+            basketItemsContainer.innerHTML =
+                "";
 
-            /*
-                Count all items including
-                quantities.
-            */
 
             const totalItems =
                 basket.reduce(
@@ -431,36 +542,39 @@
             basketCount.textContent =
                 totalItems;
 
+
             summaryItemCount.textContent =
                 totalItems;
 
 
-            /*
-                EMPTY BASKET
-            */
+
+            /* EMPTY BASKET */
 
             if (basket.length === 0) {
 
                 basketLayout.style.display =
                     "none";
 
+
                 emptyBasket.style.display =
                     "block";
+
 
                 return;
 
             }
 
 
-            /*
-                BASKET WITH ITEMS
-            */
+
+            /* BASKET HAS ITEMS */
 
             basketLayout.style.display =
                 "grid";
 
+
             emptyBasket.style.display =
                 "none";
+
 
 
             basket.forEach(
@@ -495,25 +609,33 @@
                                 ${item.category}
                             </p>
 
+
                             <h2>
                                 ${item.name}
                             </h2>
 
+
                             <p>
+
                                 <strong>
                                     Colour:
                                 </strong>
 
                                 ${item.colour}
+
                             </p>
 
+
                             <p>
+
                                 <strong>
                                     Quantity:
                                 </strong>
 
                                 ${item.quantity || 1}
+
                             </p>
+
 
                             <p class="basket-price">
                                 Price coming soon
@@ -541,9 +663,8 @@
             );
 
 
-            /*
-                REMOVE BUTTONS
-            */
+
+            /* REMOVE BUTTON EVENTS */
 
             document
                 .querySelectorAll(
@@ -561,6 +682,7 @@
                                         button.dataset.index
                                     );
 
+
                                 removeBasketItem(
                                     index
                                 );
@@ -574,11 +696,100 @@
         }
 
 
-        /* LOAD THE BASKET */
+
+        /* =========================
+           CHECK LOGIN STATUS
+        ========================== */
+
+        async function updateCheckoutButton() {
+
+
+            const {
+                data: { session }
+            } =
+                await supabaseClient.auth
+                    .getSession();
+
+
+
+            /* USER IS SIGNED IN */
+
+            if (session) {
+
+                checkoutButton.textContent =
+                    "Continue to Checkout";
+
+
+                checkoutButton.href =
+                    "checkout.html";
+
+            }
+
+
+            /* USER IS SIGNED OUT */
+
+            else {
+
+                checkoutButton.textContent =
+                    "Sign In to Continue";
+
+
+                checkoutButton.href =
+                    "account.html?redirect=basket";
+
+            }
+
+        }
+
+
+
+        /* =========================
+           AUTH CHANGES
+        ========================== */
+
+        supabaseClient.auth.onAuthStateChange(
+            function (event, session) {
+
+
+                if (session) {
+
+                    checkoutButton.textContent =
+                        "Continue to Checkout";
+
+
+                    checkoutButton.href =
+                        "checkout.html";
+
+                }
+
+
+                else {
+
+                    checkoutButton.textContent =
+                        "Sign In to Continue";
+
+
+                    checkoutButton.href =
+                        "account.html?redirect=basket";
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================
+           START PAGE
+        ========================== */
 
         renderBasket();
 
+        updateCheckoutButton();
+
+
     </script>
+
 
 </body>
 
