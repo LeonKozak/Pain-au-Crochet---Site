@@ -42,7 +42,7 @@ function updateAuthNavigation(session) {
             `Hi, ${name}`;
 
         signInLink.href =
-            "account.html";
+            "account-dashboard.html";
 
 
         /*

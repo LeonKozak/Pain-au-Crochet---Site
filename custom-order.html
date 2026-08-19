@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+
     <meta charset="UTF-8">
 
     <meta
@@ -15,11 +16,16 @@
         rel="stylesheet"
         href="style.css"
     >
+
 </head>
+
 
 <body>
 
-    <!-- HEADER -->
+
+    <!-- =========================
+         HEADER
+    ========================== -->
 
     <header class="site-header">
 
@@ -32,6 +38,7 @@
                 Pain au Crochet
             </a>
 
+
             <button
                 class="menu-toggle"
                 id="menu-toggle"
@@ -40,6 +47,7 @@
             >
                 ☰
             </button>
+
 
             <div
                 class="nav-links"
@@ -66,6 +74,23 @@
                     Contact
                 </a>
 
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
                 <a
                     href="account.html"
                     class="sign-in"
@@ -80,13 +105,19 @@
     </header>
 
 
-    <main>
 
-        <!-- CUSTOM ORDER INTRO -->
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
 
         <section class="custom-order-page">
 
             <div class="custom-order-container">
+
+
+                <!-- INTRO -->
 
                 <div class="custom-order-intro">
 
@@ -97,29 +128,37 @@
                         ← Back to Home
                     </a>
 
+
                     <p class="eyebrow">
                         Made for you
                     </p>
+
 
                     <h1>
                         Request a Custom Piece
                     </h1>
 
+
                     <p>
-                        Have something special in mind? Tell Sara what
-                        you would like and she can create a handmade
-                        crochet piece just for you.
+                        Have something special in mind?
+                        Tell Sara what you would like and
+                        she can create a handmade crochet
+                        piece just for you.
                     </p>
 
                 </div>
 
 
-                <!-- CUSTOM ORDER FORM -->
+
+                <!-- =========================
+                     CUSTOM ORDER FORM
+                ========================== -->
 
                 <form
                     class="custom-order-form"
                     id="custom-order-form"
                 >
+
 
                     <!-- PRODUCT TYPE -->
 
@@ -129,11 +168,13 @@
                             What would you like?
                         </label>
 
+
                         <select
                             id="item-type"
                             name="item-type"
                             required
                         >
+
                             <option value="">
                                 Select an item
                             </option>
@@ -161,9 +202,11 @@
                             <option value="other">
                                 Something Else
                             </option>
+
                         </select>
 
                     </div>
+
 
 
                     <!-- COLOUR -->
@@ -173,6 +216,7 @@
                         <label for="colour">
                             Preferred colour(s)
                         </label>
+
 
                         <input
                             type="text"
@@ -185,6 +229,7 @@
                     </div>
 
 
+
                     <!-- SIZE -->
 
                     <div class="form-group">
@@ -193,6 +238,7 @@
                             Size or measurements
                         </label>
 
+
                         <input
                             type="text"
                             id="size"
@@ -200,11 +246,13 @@
                             placeholder="For example: Medium, newborn, 60 cm..."
                         >
 
+
                         <p class="form-help">
                             You can leave this blank if you are unsure.
                         </p>
 
                     </div>
+
 
 
                     <!-- DESCRIPTION -->
@@ -214,6 +262,7 @@
                         <label for="description">
                             Tell us about your idea
                         </label>
+
 
                         <textarea
                             id="description"
@@ -226,6 +275,7 @@
                     </div>
 
 
+
                     <!-- REFERENCE IMAGE -->
 
                     <div class="form-group">
@@ -233,6 +283,7 @@
                         <label for="reference-image">
                             Reference image
                         </label>
+
 
                         <div class="file-upload">
 
@@ -245,12 +296,14 @@
 
                         </div>
 
+
                         <p class="form-help">
                             Optional — upload an inspiration image or
                             example of what you have in mind.
                         </p>
 
                     </div>
+
 
 
                     <!-- DEADLINE -->
@@ -261,18 +314,21 @@
                             When would you like it by?
                         </label>
 
+
                         <input
                             type="date"
                             id="deadline"
                             name="deadline"
                         >
 
+
                         <p class="form-help">
-                            Handmade pieces take time, so requested dates
-                            cannot always be guaranteed.
+                            Handmade pieces take time, so requested
+                            dates cannot always be guaranteed.
                         </p>
 
                     </div>
+
 
 
                     <!-- BUDGET -->
@@ -282,6 +338,7 @@
                         <label for="budget">
                             Approximate budget
                         </label>
+
 
                         <select
                             id="budget"
@@ -313,6 +370,7 @@
                     </div>
 
 
+
                     <!-- SUBMIT -->
 
                     <div class="custom-form-submit">
@@ -320,19 +378,22 @@
                         <button
                             type="submit"
                             class="custom-submit-button"
+                            id="custom-submit-button"
                         >
                             Submit Custom Request
                         </button>
 
+
                         <p>
-                            Sara will review your request before any
-                            order or payment is confirmed.
+                            Sara will review your request before
+                            any order or payment is confirmed.
                         </p>
 
                     </div>
 
 
-                    <!-- TEMPORARY MESSAGE -->
+
+                    <!-- MESSAGE -->
 
                     <div
                         class="custom-form-message"
@@ -340,7 +401,9 @@
                     >
                     </div>
 
+
                 </form>
+
 
             </div>
 
@@ -349,13 +412,17 @@
     </main>
 
 
-    <!-- FOOTER -->
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
 
     <footer id="contact">
 
         <p>
             © 2026 Pain au Crochet
         </p>
+
 
         <div class="footer-links">
 
@@ -372,81 +439,386 @@
     </footer>
 
 
-    <!-- JAVASCRIPT -->
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
 
     <script>
 
-        /* MOBILE MENU */
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
 
         const menuToggle =
-            document.getElementById("menu-toggle");
-
-        const navLinks =
-            document.getElementById("nav-links");
-
-
-        menuToggle.addEventListener("click", function () {
-
-            navLinks.classList.toggle("nav-open");
-
-            const menuIsOpen =
-                navLinks.classList.contains("nav-open");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                menuIsOpen
+            document.getElementById(
+                "menu-toggle"
             );
 
-            menuToggle.textContent =
-                menuIsOpen ? "✕" : "☰";
 
-        });
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
 
 
-        document
-            .querySelectorAll(".nav-links a")
-            .forEach(function (link) {
+        menuToggle.addEventListener(
+            "click",
+            function () {
 
-                link.addEventListener("click", function () {
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
 
-                    navLinks.classList.remove("nav-open");
 
-                    menuToggle.setAttribute(
-                        "aria-expanded",
-                        "false"
+                const menuIsOpen =
+                    navLinks.classList.contains(
+                        "nav-open"
                     );
 
-                    menuToggle.textContent = "☰";
 
-                });
-
-            });
-
-
-        /* CUSTOM ORDER FORM */
-
-        const customOrderForm =
-            document.getElementById("custom-order-form");
-
-        const formMessage =
-            document.getElementById("custom-form-message");
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
 
 
-        customOrderForm.addEventListener(
-            "submit",
-            function (event) {
-
-                event.preventDefault();
-
-                formMessage.textContent =
-                    "Your request looks ready! Online submission will be connected when customer accounts are added.";
-
-                formMessage.classList.add("show");
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
 
             }
         );
 
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
+
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           BASKET COUNT
+        ========================== */
+
+        function updateBasketCount() {
+
+            const basket =
+                JSON.parse(
+                    localStorage.getItem(
+                        "painAuCrochetBasket"
+                    )
+                ) || [];
+
+
+            const totalItems =
+                basket.reduce(
+                    function (total, item) {
+
+                        return total +
+                            (item.quantity || 1);
+
+                    },
+                    0
+                );
+
+
+            document.getElementById(
+                "basket-count"
+            ).textContent =
+                totalItems;
+
+        }
+
+
+
+        /* =========================
+           CUSTOM ORDER
+        ========================== */
+
+        const customOrderForm =
+            document.getElementById(
+                "custom-order-form"
+            );
+
+
+        const formMessage =
+            document.getElementById(
+                "custom-form-message"
+            );
+
+
+        const submitButton =
+            document.getElementById(
+                "custom-submit-button"
+            );
+
+
+
+        customOrderForm.addEventListener(
+            "submit",
+            async function (event) {
+
+                event.preventDefault();
+
+
+
+                /* =========================
+                   GET LOGGED-IN USER
+                ========================== */
+
+                const {
+                    data: userData,
+                    error: userError
+                } =
+                    await supabaseClient.auth
+                        .getUser();
+
+
+                const user =
+                    userData?.user;
+
+
+
+                if (userError || !user) {
+
+                    formMessage.textContent =
+                        "Please sign in before submitting a custom request.";
+
+                    formMessage.classList.add(
+                        "show"
+                    );
+
+
+                    setTimeout(
+                        function () {
+
+                            window.location.href =
+                                "account.html";
+
+                        },
+                        1500
+                    );
+
+
+                    return;
+
+                }
+
+
+
+                /* =========================
+                   FORM VALUES
+                ========================== */
+
+                const itemType =
+                    document.getElementById(
+                        "item-type"
+                    ).value;
+
+
+                const preferredColours =
+                    document.getElementById(
+                        "colour"
+                    ).value.trim();
+
+
+                const sizeMeasurements =
+                    document.getElementById(
+                        "size"
+                    ).value.trim();
+
+
+                const description =
+                    document.getElementById(
+                        "description"
+                    ).value.trim();
+
+
+                const desiredDate =
+                    document.getElementById(
+                        "deadline"
+                    ).value;
+
+
+                const budget =
+                    document.getElementById(
+                        "budget"
+                    ).value;
+
+
+
+                /* =========================
+                   SAVING STATE
+                ========================== */
+
+                submitButton.disabled =
+                    true;
+
+
+                submitButton.textContent =
+                    "Submitting Request...";
+
+
+                formMessage.textContent =
+                    "Saving your custom request...";
+
+
+                formMessage.classList.add(
+                    "show"
+                );
+
+
+
+                /* =========================
+                   SAVE TO SUPABASE
+                ========================== */
+
+                const {
+                    data: newCustomOrder,
+                    error: customOrderError
+                } =
+                    await supabaseClient
+                        .from("custom_orders")
+                        .insert({
+
+                            user_id:
+                                user.id,
+
+                            item_type:
+                                itemType,
+
+                            preferred_colours:
+                                preferredColours,
+
+                            size_measurements:
+                                sizeMeasurements || null,
+
+                            description:
+                                description,
+
+                            desired_date:
+                                desiredDate || null,
+
+                            budget:
+                                budget || null,
+
+                            reference_image_url:
+                                null,
+
+                            status:
+                                "pending"
+
+                        })
+                        .select("id")
+                        .single();
+
+
+
+                /* =========================
+                   ERROR
+                ========================== */
+
+                if (customOrderError) {
+
+                    console.error(
+                        "Custom order error:",
+                        customOrderError
+                    );
+
+
+                    formMessage.textContent =
+                        "Something went wrong while saving your request. Please try again.";
+
+
+                    submitButton.disabled =
+                        false;
+
+
+                    submitButton.textContent =
+                        "Submit Custom Request";
+
+
+                    return;
+
+                }
+
+
+
+                /* =========================
+                   SUCCESS
+                ========================== */
+
+                console.log(
+                    "Custom request saved:",
+                    newCustomOrder
+                );
+
+
+                formMessage.textContent =
+                    "Custom request submitted successfully! ✓";
+
+
+                submitButton.textContent =
+                    "Request Submitted ✓";
+
+
+                customOrderForm.reset();
+
+            }
+        );
+
+
+
+        /* =========================
+           START
+        ========================== */
+
+        updateBasketCount();
+
+
     </script>
+
 
 </body>
 

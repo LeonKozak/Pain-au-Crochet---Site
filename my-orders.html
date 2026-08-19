@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Orders | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="account.html"
+                    class="sign-in"
+                >
+                    Sign In
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="my-orders-page">
+
+            <div class="my-orders-container">
+
+
+                <!-- HEADING -->
+
+                <div class="my-orders-heading">
+
+                    <a
+                        href="index.html"
+                        class="back-link"
+                    >
+                        ← Back to Home
+                    </a>
+
+
+                    <p class="eyebrow">
+                        Your account
+                    </p>
+
+
+                    <h1>
+                        My Orders
+                    </h1>
+
+
+                    <p>
+                        View your previous Pain au Crochet orders
+                        and check their current status.
+                    </p>
+
+                </div>
+
+
+
+                <!-- LOADING -->
+
+                <div
+                    class="orders-loading"
+                    id="orders-loading"
+                >
+                    Loading your orders...
+                </div>
+
+
+
+                <!-- ERROR -->
+
+                <div
+                    class="orders-error"
+                    id="orders-error"
+                >
+
+                    <h2>
+                        We couldn't load your orders
+                    </h2>
+
+                    <p id="orders-error-message">
+                        Please try again.
+                    </p>
+
+                </div>
+
+
+
+                <!-- EMPTY -->
+
+                <div
+                    class="orders-empty"
+                    id="orders-empty"
+                >
+
+                    <h2>
+                        No orders yet
+                    </h2>
+
+                    <p>
+                        When you place an order, it will appear here.
+                    </p>
+
+                    <a
+                        href="index.html#shop"
+                        class="primary-button"
+                    >
+                        Browse the Collection
+                    </a>
+
+                </div>
+
+
+
+                <!-- ORDERS -->
+
+                <div
+                    class="orders-list"
+                    id="orders-list"
+                >
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menu-toggle"
+            );
+
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
+
+
+                const menuIsOpen =
+                    navLinks.classList.contains(
+                        "nav-open"
+                    );
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           ELEMENTS
+        ========================== */
+
+        const ordersLoading =
+            document.getElementById(
+                "orders-loading"
+            );
+
+
+        const ordersError =
+            document.getElementById(
+                "orders-error"
+            );
+
+
+        const ordersErrorMessage =
+            document.getElementById(
+                "orders-error-message"
+            );
+
+
+        const ordersEmpty =
+            document.getElementById(
+                "orders-empty"
+            );
+
+
+        const ordersList =
+            document.getElementById(
+                "orders-list"
+            );
+
+
+        const basketCount =
+            document.getElementById(
+                "basket-count"
+            );
+
+
+
+        /* =========================
+           BASKET COUNT
+        ========================== */
+
+        function updateBasketCount() {
+
+            const basket =
+                JSON.parse(
+                    localStorage.getItem(
+                        "painAuCrochetBasket"
+                    )
+                ) || [];
+
+
+            const totalItems =
+                basket.reduce(
+                    function (total, item) {
+
+                        return total +
+                            (item.quantity || 1);
+
+                    },
+                    0
+                );
+
+
+            basketCount.textContent =
+                totalItems;
+
+        }
+
+
+
+        /* =========================
+           ORDER REFERENCE
+        ========================== */
+
+        function createOrderReference(orderId) {
+
+            return (
+                "PAC-" +
+                orderId
+                    .replaceAll("-", "")
+                    .slice(0, 8)
+                    .toUpperCase()
+            );
+
+        }
+
+
+
+        /* =========================
+           DATE
+        ========================== */
+
+        function formatDate(dateValue) {
+
+            return new Date(
+                dateValue
+            ).toLocaleDateString(
+                "en-GB",
+                {
+                    day: "numeric",
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           STATUS
+        ========================== */
+
+        function formatStatus(status) {
+
+            return status
+                .replaceAll("_", " ")
+                .replace(
+                    /\b\w/g,
+                    function (letter) {
+
+                        return letter.toUpperCase();
+
+                    }
+                );
+
+        }
+
+
+
+        /* =========================
+           ERROR
+        ========================== */
+
+        function showOrdersError(message) {
+
+            ordersLoading.style.display =
+                "none";
+
+            ordersEmpty.style.display =
+                "none";
+
+            ordersList.style.display =
+                "none";
+
+            ordersError.style.display =
+                "block";
+
+            ordersErrorMessage.textContent =
+                message;
+
+        }
+
+
+
+        /* =========================
+           LOAD ORDERS
+        ========================== */
+
+        async function loadOrders() {
+
+
+            /*
+                Get a verified logged-in user.
+            */
+
+            const {
+                data: userData,
+                error: userError
+            } =
+                await supabaseClient.auth
+                    .getUser();
+
+
+            const user =
+                userData?.user;
+
+
+            if (userError || !user) {
+
+                window.location.href =
+                    "account.html";
+
+                return;
+
+            }
+
+
+
+            /*
+                Retrieve this user's orders.
+
+                We also request the linked
+                order_items for each order.
+            */
+
+            const {
+                data: orders,
+                error: ordersQueryError
+            } =
+                await supabaseClient
+                    .from("orders")
+                    .select(
+                        `
+                        id,
+                        user_id,
+                        status,
+                        created_at,
+                        order_items (
+                            id,
+                            product_name,
+                            category,
+                            colour,
+                            quantity
+                        )
+                        `
+                    )
+                    .eq(
+                        "user_id",
+                        user.id
+                    )
+                    .order(
+                        "created_at",
+                        {
+                            ascending: false
+                        }
+                    );
+
+
+            if (ordersQueryError) {
+
+                console.error(
+                    "Orders error:",
+                    ordersQueryError
+                );
+
+
+                showOrdersError(
+                    "Your orders couldn't be loaded."
+                );
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               EMPTY
+            ========================== */
+
+            if (!orders || orders.length === 0) {
+
+                ordersLoading.style.display =
+                    "none";
+
+                ordersError.style.display =
+                    "none";
+
+                ordersList.style.display =
+                    "none";
+
+                ordersEmpty.style.display =
+                    "block";
+
+                return;
+
+            }
+
+
+
+            /* =========================
+               DISPLAY ORDERS
+            ========================== */
+
+            ordersList.innerHTML =
+                "";
+
+
+            orders.forEach(
+                function (order) {
+
+
+                    const itemCount =
+                        (order.order_items || [])
+                            .reduce(
+                                function (
+                                    total,
+                                    item
+                                ) {
+
+                                    return total +
+                                        (
+                                            item.quantity ||
+                                            1
+                                        );
+
+                                },
+                                0
+                            );
+
+
+
+                    const orderCard =
+                        document.createElement(
+                            "article"
+                        );
+
+
+                    orderCard.className =
+                        "my-order-card";
+
+
+                    orderCard.innerHTML = `
+
+                        <div class="my-order-main">
+
+                            <div>
+
+                                <p class="product-category">
+                                    Order
+                                </p>
+
+                                <h2>
+                                    ${createOrderReference(order.id)}
+                                </h2>
+
+                            </div>
+
+
+                            <span class="my-order-status">
+                                ${formatStatus(order.status)}
+                            </span>
+
+                        </div>
+
+
+                        <div class="my-order-details">
+
+                            <div>
+
+                                <span>
+                                    Date
+                                </span>
+
+                                <strong>
+                                    ${formatDate(order.created_at)}
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Items
+                                </span>
+
+                                <strong>
+                                    ${itemCount}
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="my-order-items">
+
+                            ${(order.order_items || [])
+                                .map(
+                                    function (item) {
+
+                                        return `
+
+                                            <div class="my-order-item">
+
+                                                <span>
+                                                    ${item.product_name}
+                                                </span>
+
+                                                <small>
+                                                    ${item.colour || ""}
+                                                    × ${item.quantity || 1}
+                                                </small>
+
+                                            </div>
+
+                                        `;
+
+                                    }
+                                )
+                                .join("")}
+
+                        </div>
+
+
+                        <a
+                            href="order-confirmation.html?order=${encodeURIComponent(order.id)}"
+                            class="product-button my-order-view-button"
+                        >
+                            View Order
+                        </a>
+
+                    `;
+
+
+                    ordersList.appendChild(
+                        orderCard
+                    );
+
+                }
+            );
+
+
+            ordersLoading.style.display =
+                "none";
+
+            ordersError.style.display =
+                "none";
+
+            ordersEmpty.style.display =
+                "none";
+
+            ordersList.style.display =
+                "grid";
+
+        }
+
+
+
+        /* =========================
+           START
+        ========================== */
+
+        updateBasketCount();
+
+        loadOrders();
+
+
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>My Account | Pain au Crochet</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         HEADER
+    ========================== -->
+
+    <header class="site-header">
+
+        <nav class="navbar">
+
+            <a
+                href="index.html"
+                class="mobile-brand"
+            >
+                Pain au Crochet
+            </a>
+
+
+            <button
+                class="menu-toggle"
+                id="menu-toggle"
+                aria-label="Open navigation menu"
+                aria-expanded="false"
+            >
+                ☰
+            </button>
+
+
+            <div
+                class="nav-links"
+                id="nav-links"
+            >
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="index.html#shop">
+                    Shop
+                </a>
+
+                <a href="custom-order.html">
+                    Custom Orders
+                </a>
+
+                <a href="index.html#about">
+                    About
+                </a>
+
+                <a href="index.html#contact">
+                    Contact
+                </a>
+
+
+                <a
+                    href="basket.html"
+                    class="basket-nav-link"
+                >
+                    Basket
+
+                    <span
+                        class="basket-count"
+                        id="basket-count"
+                    >
+                        0
+                    </span>
+
+                </a>
+
+
+                <a
+                    href="account-dashboard.html"
+                    class="sign-in"
+                >
+                    Account
+                </a>
+
+            </div>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main>
+
+        <section class="account-dashboard-page">
+
+            <div class="account-dashboard-container">
+
+
+                <!-- =========================
+                     LOADING
+                ========================== -->
+
+                <div
+                    class="account-dashboard-loading"
+                    id="account-dashboard-loading"
+                >
+
+                    Loading your account...
+
+                </div>
+
+
+
+                <!-- =========================
+                     DASHBOARD
+                ========================== -->
+
+                <div
+                    class="account-dashboard-content"
+                    id="account-dashboard-content"
+                >
+
+
+                    <!-- HEADING -->
+
+                    <div class="account-dashboard-heading">
+
+                        <p class="eyebrow">
+                            Your account
+                        </p>
+
+                        <h1 id="account-welcome">
+                            Welcome
+                        </h1>
+
+                        <p>
+                            Manage your Pain au Crochet account
+                            and view your orders.
+                        </p>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         DASHBOARD CARDS
+                    ========================== -->
+
+                    <div class="account-dashboard-grid">
+
+
+                        <!-- MY ORDERS -->
+
+                        <a
+                            href="my-orders.html"
+                            class="account-dashboard-card"
+                        >
+
+                            <div class="account-dashboard-icon">
+                                🧶
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    My Orders
+                                </h2>
+
+                                <p>
+                                    View previous orders,
+                                    order details and their
+                                    current status.
+                                </p>
+
+                                <span class="account-card-link">
+                                    View Orders →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- SHOP -->
+
+                        <a
+                            href="index.html#shop"
+                            class="account-dashboard-card"
+                        >
+
+                            <div class="account-dashboard-icon">
+                                ♡
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    Shop
+                                </h2>
+
+                                <p>
+                                    Browse the latest handmade
+                                    Pain au Crochet pieces.
+                                </p>
+
+                                <span class="account-card-link">
+                                    Browse Collection →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- CUSTOM ORDER -->
+
+                        <a
+                            href="custom-order.html"
+                            class="account-dashboard-card"
+                        >
+
+                            <div class="account-dashboard-icon">
+                                ✂
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    Custom Orders
+                                </h2>
+
+                                <p>
+                                    Request a custom handmade
+                                    crochet piece.
+                                </p>
+
+                                <span class="account-card-link">
+                                    Request a Piece →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+
+                        <!-- BASKET -->
+
+                        <a
+                            href="basket.html"
+                            class="account-dashboard-card"
+                        >
+
+                            <div class="account-dashboard-icon">
+                                🛍
+                            </div>
+
+                            <div>
+
+                                <h2>
+                                    My Basket
+                                </h2>
+
+                                <p>
+                                    Continue shopping or review
+                                    the pieces currently in your basket.
+                                </p>
+
+                                <span class="account-card-link">
+                                    View Basket →
+                                </span>
+
+                            </div>
+
+                        </a>
+
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         ACCOUNT DETAILS
+                    ========================== -->
+
+                    <div class="account-details-card">
+
+                        <div class="account-details-heading">
+
+                            <div>
+
+                                <p class="eyebrow">
+                                    Profile
+                                </p>
+
+                                <h2>
+                                    Account Details
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="account-details-grid">
+
+
+                            <div class="account-detail">
+
+                                <span>
+                                    Name
+                                </span>
+
+                                <strong id="account-name">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="account-detail">
+
+                                <span>
+                                    Email
+                                </span>
+
+                                <strong id="account-email">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+
+                            <div class="account-detail">
+
+                                <span>
+                                    Member Since
+                                </span>
+
+                                <strong id="account-created">
+                                    —
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =========================
+                         SIGN OUT
+                    ========================== -->
+
+                    <div class="account-sign-out-section">
+
+                        <p>
+                            Finished for now?
+                        </p>
+
+                        <button
+                            type="button"
+                            class="secondary-button account-sign-out-button"
+                            id="dashboard-sign-out"
+                        >
+                            Sign Out
+                        </button>
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =========================
+         FOOTER
+    ========================== -->
+
+    <footer id="contact">
+
+        <p>
+            © 2026 Pain au Crochet
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <!-- =========================
+         SUPABASE
+    ========================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"
+    ></script>
+
+    <script src="supabase-client.js"></script>
+
+    <script src="auth-state.js"></script>
+
+
+
+    <!-- =========================
+         PAGE JAVASCRIPT
+    ========================== -->
+
+    <script>
+
+
+        /* =========================
+           MOBILE MENU
+        ========================== */
+
+        const menuToggle =
+            document.getElementById(
+                "menu-toggle"
+            );
+
+
+        const navLinks =
+            document.getElementById(
+                "nav-links"
+            );
+
+
+        menuToggle.addEventListener(
+            "click",
+            function () {
+
+                navLinks.classList.toggle(
+                    "nav-open"
+                );
+
+
+                const menuIsOpen =
+                    navLinks.classList.contains(
+                        "nav-open"
+                    );
+
+
+                menuToggle.setAttribute(
+                    "aria-expanded",
+                    menuIsOpen
+                );
+
+
+                menuToggle.textContent =
+                    menuIsOpen ? "✕" : "☰";
+
+            }
+        );
+
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(
+                function (link) {
+
+                    link.addEventListener(
+                        "click",
+                        function () {
+
+                            navLinks.classList.remove(
+                                "nav-open"
+                            );
+
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+
+                            menuToggle.textContent =
+                                "☰";
+
+                        }
+                    );
+
+                }
+            );
+
+
+
+        /* =========================
+           ELEMENTS
+        ========================== */
+
+        const dashboardLoading =
+            document.getElementById(
+                "account-dashboard-loading"
+            );
+
+
+        const dashboardContent =
+            document.getElementById(
+                "account-dashboard-content"
+            );
+
+
+        const accountWelcome =
+            document.getElementById(
+                "account-welcome"
+            );
+
+
+        const accountName =
+            document.getElementById(
+                "account-name"
+            );
+
+
+        const accountEmail =
+            document.getElementById(
+                "account-email"
+            );
+
+
+        const accountCreated =
+            document.getElementById(
+                "account-created"
+            );
+
+
+        const basketCount =
+            document.getElementById(
+                "basket-count"
+            );
+
+
+        const signOutButton =
+            document.getElementById(
+                "dashboard-sign-out"
+            );
+
+
+
+        /* =========================
+           BASKET COUNT
+        ========================== */
+
+        function updateBasketCount() {
+
+            const basket =
+                JSON.parse(
+                    localStorage.getItem(
+                        "painAuCrochetBasket"
+                    )
+                ) || [];
+
+
+            const totalItems =
+                basket.reduce(
+                    function (total, item) {
+
+                        return total +
+                            (item.quantity || 1);
+
+                    },
+                    0
+                );
+
+
+            basketCount.textContent =
+                totalItems;
+
+        }
+
+
+
+        /* =========================
+           FORMAT DATE
+        ========================== */
+
+        function formatAccountDate(
+            dateValue
+        ) {
+
+            if (!dateValue) {
+
+                return "—";
+
+            }
+
+
+            return new Date(
+                dateValue
+            ).toLocaleDateString(
+                "en-GB",
+                {
+                    month: "long",
+                    year: "numeric"
+                }
+            );
+
+        }
+
+
+
+        /* =========================
+           LOAD CUSTOMER
+        ========================== */
+
+        async function loadAccount() {
+
+
+            const {
+                data: userData,
+                error: userError
+            } =
+                await supabaseClient.auth
+                    .getUser();
+
+
+            const user =
+                userData?.user;
+
+
+
+            /*
+                No logged-in user
+            */
+
+            if (userError || !user) {
+
+                window.location.href =
+                    "account.html";
+
+                return;
+
+            }
+
+
+
+            /*
+                Get display name.
+            */
+
+            const name =
+                user.user_metadata?.name ||
+                user.email?.split("@")[0] ||
+                "Customer";
+
+
+
+            /*
+                Display information.
+            */
+
+            accountWelcome.textContent =
+                `Welcome, ${name}`;
+
+
+            accountName.textContent =
+                name;
+
+
+            accountEmail.textContent =
+                user.email || "—";
+
+
+            accountCreated.textContent =
+                formatAccountDate(
+                    user.created_at
+                );
+
+
+
+            /*
+                Show dashboard.
+            */
+
+            dashboardLoading.style.display =
+                "none";
+
+
+            dashboardContent.style.display =
+                "block";
+
+        }
+
+
+
+        /* =========================
+           SIGN OUT
+        ========================== */
+
+        signOutButton.addEventListener(
+            "click",
+            async function () {
+
+
+                signOutButton.disabled =
+                    true;
+
+
+                signOutButton.textContent =
+                    "Signing Out...";
+
+
+                const {
+                    error
+                } =
+                    await supabaseClient.auth
+                        .signOut({
+                            scope: "local"
+                        });
+
+
+
+                if (error) {
+
+                    console.error(
+                        "Sign out error:",
+                        error.message
+                    );
+
+
+                    signOutButton.disabled =
+                        false;
+
+
+                    signOutButton.textContent =
+                        "Sign Out";
+
+
+                    return;
+
+                }
+
+
+
+                window.location.href =
+                    "index.html";
+
+            }
+        );
+
+
+
+        /* =========================
+           START
+        ========================== */
+
+        updateBasketCount();
+
+        loadAccount();
+
+
+    </script>
+
+
+</body>
+
+</html>
